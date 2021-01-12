@@ -7,7 +7,10 @@
     @date 11-1-2021
 */
 #include "mbed.h"
-#include "stm32746g_discovery_lcd.h"
+#include "lcd.h"
+#include "serialCom.h"
+
+AnalogIn adc_temp(ADC_TEMP);
 
 /**
 *@brief Test description.
@@ -17,17 +20,16 @@
 */
 int main()
 {
-    BSP_LCD_Init();
-    BSP_LCD_LayerDefaultInit(LTDC_ACTIVE_LAYER, LCD_FB_START_ADDRESS);
-    BSP_LCD_SelectLayer(LTDC_ACTIVE_LAYER);
+    lcdInit();
 
-    BSP_LCD_Clear(LCD_COLOR_RED);
-    BSP_LCD_SetFont(&Font12);
-    BSP_LCD_SetBackColor(LCD_COLOR_RED);
-    BSP_LCD_SetTextColor(LCD_COLOR_BLUE);
+    serialInit();
+
 
     while (true) {
         //printf("DEBUG - Message \n");
 
+        serialRead();
+
+        wait_us(100000);
     }
 }
