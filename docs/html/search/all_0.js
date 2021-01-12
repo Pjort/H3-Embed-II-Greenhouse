@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['main_0',['main',['../main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main.cpp']]],
-  ['main_2ecpp_1',['main.cpp',['../main_8cpp.html',1,'']]]
+  ['adc_5ftemp_0',['adc_temp',['../main_8cpp.html#acb3098bd863ac194d20e2ebeabb2cd6d',1,'main.cpp']]]
 ];
