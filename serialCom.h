@@ -12,6 +12,7 @@ static BufferedSerial serial_port(USBTX, USBRX);
 // Application serialBuffer to receive the data
 char serialBuf[MAXIMUM_BUFFER_SIZE] = {0};
 char storedBuf[MAXIMUM_BUFFER_SIZE] = {0};
+char currentMessage[MAXIMUM_BUFFER_SIZE] = {0};
 
 void serialInit(){
     
@@ -29,23 +30,24 @@ void serialInit(){
 void serialRead(){
     serial_port.read(serialBuf, sizeof(serialBuf));
     for (int i = 0; i<MAXIMUM_BUFFER_SIZE; i++) {
-        if(serialBuf[i]==13){
-            printf("%s \n",storedBuf);
+        if(serialBuf[i]==13){                       // 13=CR (enter)
             for (int i = 0; i<MAXIMUM_BUFFER_SIZE; i++) {
+                currentMessage[i]=storedBuf[i];
                 storedBuf[i]=0;
             }
+            printf("%s \n",currentMessage);
         }
         else if(serialBuf[i]!=0 & storedBuf[i]==0){
             storedBuf[i]=serialBuf[i];
         }
         else if (serialBuf[i]!=0 & storedBuf[i]!=0) {
-            int temp;
+            int nextEmpty;
             for (int j = MAXIMUM_BUFFER_SIZE-1; j>=i; j--) {
                 if(storedBuf[j]==0){
-                    temp=j;
+                    nextEmpty=j;
                 }
             }
-            storedBuf[temp]=serialBuf[i];
+            storedBuf[nextEmpty]=serialBuf[i];
         }
 
         serialBuf[i]=0;

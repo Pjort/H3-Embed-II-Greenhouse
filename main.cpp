@@ -28,10 +28,9 @@ int main()
 
     timersInit();
 
-
     while (true) {
         
-        serialTimer(100);
+        serialTimer(10);
 
         //printf("DEBUG - Message \n");
     }
