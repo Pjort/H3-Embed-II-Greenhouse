@@ -1,3 +1,6 @@
+#ifndef serialCom
+#define serialCom
+
 #include "mbed.h"
 
 // Maximum number of element the application serialBuffer can contain
@@ -50,3 +53,4 @@ void serialRead(){
     }
 
 }
+#endif

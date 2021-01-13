@@ -1,3 +1,6 @@
+#ifndef LCD
+#define LCD
+
 #include "stm32746g_discovery_lcd.h"
 
 void lcdInit(){
@@ -10,3 +13,5 @@ void lcdInit(){
     BSP_LCD_SetBackColor(LCD_COLOR_RED);
     BSP_LCD_SetTextColor(LCD_COLOR_BLUE);
 }
+
+#endif

@@ -9,6 +9,7 @@
 #include "mbed.h"
 #include "lcd.h"
 #include "timers.h"
+#include "serialCom.h"
 
 AnalogIn adc_temp(ADC_TEMP);
 
@@ -22,6 +23,8 @@ AnalogIn adc_temp(ADC_TEMP);
 int main()
 {
     lcdInit();
+
+    serialInit();
 
     timersInit();
 

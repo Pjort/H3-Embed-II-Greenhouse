@@ -1,3 +1,6 @@
+#ifndef TIMERS
+#define TIMERS
+
 #include "mbed.h"
 #include "serialCom.h"
 
@@ -9,8 +12,6 @@ unsigned long millis(){
 }
 
 void timersInit(){
-
-    serialInit();
 
     set_time(1610462467); // 12/01/2021 @ 14:41 (UTC)
     timeNow = time(NULL);
@@ -33,3 +34,5 @@ void serialTimer(int delay){
         
     }   
 }
+
+#endif
