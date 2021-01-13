@@ -8,14 +8,10 @@
 */
 #include "mbed.h"
 #include "lcd.h"
-#include "serialCom.h"
+#include "timers.h"
 
 AnalogIn adc_temp(ADC_TEMP);
 
-
-unsigned long millis(){
-    return (us_ticker_read() / 1000L);
-}
 
 /**
 *@brief Test description.
@@ -25,28 +21,14 @@ unsigned long millis(){
 */
 int main()
 {
-
-    set_time(1610462467); // 12/01/2021 @ 14:41 (UTC)
-    time_t timeNow = time(NULL);
-
     lcdInit();
 
-    serialInit();
-
-    int periodeMs = 1000;
-
-    unsigned long time_ms = 0; // This can hould about 50 days of milliseconds before repeating
+    timersInit();
 
 
     while (true) {
         
-        if (millis() >= time_ms + periodeMs){
-            time_ms = millis();
-            printf("%lu \n",time_ms);
-            
-            serialRead();
-            
-        }      
+        serialTimer(100);
 
         //printf("DEBUG - Message \n");
     }
