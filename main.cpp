@@ -28,6 +28,8 @@ int main()
 
     timersInit();
 
+    drawMainScreen();
+
     while (true) {
         
         serialTimer(10);
