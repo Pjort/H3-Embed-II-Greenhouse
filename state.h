@@ -10,8 +10,8 @@ enum State {STARTUP, IDLE, SAMPLE_SENSOR, READ_SENSOR, UPDATE_SCREEN, INTERUPT};
 
 enum StartupInput {NOTHING,NAME,NUMBER};
 
-//int currentState = STARTUP;
-int currentState = IDLE;
+int currentState = STARTUP;
+//int currentState = IDLE;
 int currentStartupInput = NOTHING;
 
 int mainScreenDrawn = 0;
@@ -19,9 +19,8 @@ int mainScreenDrawn = 0;
 void runStates(){
     serialTimer();
     switch (currentState) {
+        
         case STARTUP:
-
-
             if (currentStartupInput == NOTHING) {
                 printf("Write unit name: (Press enter twice)");
                 currentStartupInput = NAME;
@@ -46,10 +45,11 @@ void runStates(){
                 
             }
 
+            // Sample some data while in startup to make the display show proper values from the get go.
             if (sensorSampleTimer()) {
                 sensorSampling();
             }
-
+            // Read sensors for some data while in startup to make the display show proper values from the get go.
             if (sensorReadTimer()){
                 readSensors();
             }
@@ -65,7 +65,7 @@ void runStates(){
             if (sensorReadTimer()){
                 currentState = READ_SENSOR;
             }
-            
+
             if (sensorSampleTimer()) {
                 currentState = SAMPLE_SENSOR;
             }

@@ -9,6 +9,8 @@ float adcTemp;
 
 float lightValue=60.0f;
 
+float thermistorValue= 12.0f;
+
 float dhtTemp=18.2f;
 float dhtHumid=90.0f;
 

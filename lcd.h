@@ -24,12 +24,14 @@ void drawTopMiddleText();
 void drawDateTime();
 void drawDrop(int xOffset,int yOffset, int scale);
 void drawWatering(int xOffset,int yOffset, int scale);
+void drawBulb(int xOffset,int yOffset, int scale);
 void drawDay();
 void drawNight();
 void drawWatering();
 void drawLightValue();
 void drawHouseText();
 void screenRefresh();
+void drawOutTemp();
 
 void lcdInit(){
     BSP_LCD_Init();
@@ -101,10 +103,9 @@ void drawMainScreen(){
     BSP_LCD_SetTextColor(LCD_COLOR_BLACK);
     BSP_LCD_DrawRect (BSP_LCD_GetXSize()/2+125, 130, 110, 66);
 
+    drawBulb(BSP_LCD_GetXSize()/2-15,90,3);
 
     drawMainScreenTexts();
-
-
 
 }
 
@@ -128,8 +129,7 @@ void drawMainScreenTexts(){
     //Left box text
     BSP_LCD_SetFont(&Font16);
     BSP_LCD_DisplayStringAt(15, 105, (uint8_t *)"Out Temp", LEFT_MODE);
-    BSP_LCD_SetFont(&Font24);
-    BSP_LCD_DisplayStringAt(15, 130, (uint8_t *)"12,0C", LEFT_MODE);
+    drawOutTemp();
 
     //Right box text
     BSP_LCD_SetFont(&Font20);
@@ -145,6 +145,8 @@ void screenRefresh(){
     drawDateTime();
     drawLightValue();
     drawHouseText();
+    drawOutTemp();
+    drawBulb(BSP_LCD_GetXSize()/2-15,90,3);
 
     if(currentDrawnDayNight == DAY && currentDayNightCycle == NIGHT){
         drawMainScreen();
@@ -203,7 +205,7 @@ int pixelArtDrop[10][10] = {
     {0,0,0,0,0,0,0,0,0,0},
 };
 
-// Drop watering
+// Watering pixelart
 int pixelArtWatering[10][10] = {    
 	{0,0,1,0,0,0,0,1,0,0},
     {1,0,0,1,0,0,1,0,0,1},
@@ -215,6 +217,20 @@ int pixelArtWatering[10][10] = {
     {0,0,0,0,1,1,0,0,0,0},
     {0,0,0,0,1,1,0,0,0,0},
     {0,0,0,0,1,1,0,0,0,0},
+};
+
+// Bulb watering
+int pixelArtBulb[10][10] = {    
+	{0,0,0,1,1,1,1,0,0,0},
+    {0,0,0,1,1,1,1,0,0,0},
+	{0,0,0,1,1,1,1,0,0,0},
+    {0,0,1,0,1,1,0,1,0,0},
+    {0,1,0,0,1,1,0,0,1,0},
+    {1,0,0,1,0,0,1,0,0,1},
+    {1,0,1,0,0,0,0,1,0,1},
+    {1,0,0,0,1,1,0,0,0,1},
+    {0,1,0,0,0,0,0,0,1,0},
+    {0,0,1,1,1,1,1,1,0,0},
 };
 
 //Scaleable function for drawing a drop
@@ -241,6 +257,22 @@ void drawWatering(int xOffset,int yOffset, int scale){
     }
 }
 
+void drawBulb(int xOffset,int yOffset, int scale){
+    if (currentDayNightCycle==DAY & lightValue<50.0f) {
+        BSP_LCD_SetTextColor(LCD_COLOR_YELLOW);
+    }else{
+        BSP_LCD_SetTextColor(LCD_COLOR_BLACK);
+    }
+    for (int i = 0; i < 10; i++){
+        for (int j = 0; j < 10; j++){
+                if (pixelArtBulb[i][j] == 1) {
+                    BSP_LCD_FillRect(xOffset+(j*scale), yOffset+(i*scale),scale, scale);
+                }
+            }
+            
+    }
+}
+
 void drawDay(){
     //Draw day background
     BSP_LCD_Clear(LCD_COLOR_SKY_DAY);
@@ -259,26 +291,26 @@ void drawDay(){
 }
 
 void drawNight(){
-        //Draw night background
-        BSP_LCD_Clear(LCD_COLOR_DARKBLUE);
+    //Draw night background
+    BSP_LCD_Clear(LCD_COLOR_DARKBLUE);
 
-        //Draw moon
-        BSP_LCD_SetTextColor(LCD_COLOR_YELLOW);
-        BSP_LCD_FillCircle(390+28, 46+28, 28);
-        BSP_LCD_SetTextColor(LCD_COLOR_BLACK);
-        BSP_LCD_DrawCircle(390+28, 46+28, 28);
-        BSP_LCD_SetTextColor(LCD_COLOR_DARKBLUE);
-        BSP_LCD_FillCircle(390+28+15, 46+28, 28);
-        BSP_LCD_SetTextColor(LCD_COLOR_BLACK);
-        BSP_LCD_DrawCircle(390+28+15, 46+28, 28);
-        BSP_LCD_SetTextColor(LCD_COLOR_DARKBLUE);
-        BSP_LCD_FillRect (390+28+8, 46, 50, 66);
+    //Draw moon
+    BSP_LCD_SetTextColor(LCD_COLOR_YELLOW);
+    BSP_LCD_FillCircle(390+28, 46+28, 28);
+    BSP_LCD_SetTextColor(LCD_COLOR_BLACK);
+    BSP_LCD_DrawCircle(390+28, 46+28, 28);
+    BSP_LCD_SetTextColor(LCD_COLOR_DARKBLUE);
+    BSP_LCD_FillCircle(390+28+15, 46+28, 28);
+    BSP_LCD_SetTextColor(LCD_COLOR_BLACK);
+    BSP_LCD_DrawCircle(390+28+15, 46+28, 28);
+    BSP_LCD_SetTextColor(LCD_COLOR_DARKBLUE);
+    BSP_LCD_FillRect (390+28+8, 46, 50, 66);
 
-        //Draw night grass bottom
-        BSP_LCD_SetTextColor(LCD_COLOR_DARKGREEN);
-        BSP_LCD_FillRect (0, BSP_LCD_GetYSize()-15, BSP_LCD_GetXSize(), BSP_LCD_GetYSize());
-        BSP_LCD_SetTextColor(LCD_COLOR_BLACK);
-        BSP_LCD_DrawHLine (0,BSP_LCD_GetYSize()-16,BSP_LCD_GetXSize());
+    //Draw night grass bottom
+    BSP_LCD_SetTextColor(LCD_COLOR_DARKGREEN);
+    BSP_LCD_FillRect (0, BSP_LCD_GetYSize()-15, BSP_LCD_GetXSize(), BSP_LCD_GetYSize());
+    BSP_LCD_SetTextColor(LCD_COLOR_BLACK);
+    BSP_LCD_DrawHLine (0,BSP_LCD_GetYSize()-16,BSP_LCD_GetXSize());
 }
 
 void drawWatering(){
@@ -289,6 +321,7 @@ void drawWatering(){
 }
 
 void drawLightValue(){
+    BSP_LCD_SetTextColor(LCD_COLOR_BLACK);
     BSP_LCD_SetFont(&Font24);
     char buffer[10] = {0};
     sprintf(buffer," %2.0f%%", lightValue);
@@ -300,13 +333,21 @@ void drawHouseText(){
     BSP_LCD_SetFont(&Font24);
     BSP_LCD_SetBackColor(LCD_COLOR_INDOOR_DAY);
     char buffer[10] = {0};
-    sprintf(buffer," %2.1fC  ", dhtTemp);
+    sprintf(buffer,"  %2.1fC  ", dhtTemp);
     BSP_LCD_DisplayStringAt(0, 145, (uint8_t *)buffer, CENTER_MODE);
     sprintf(buffer,"%2.0f%%  ", dhtHumid);
     BSP_LCD_DisplayStringAt(0, 200, (uint8_t *)buffer, CENTER_MODE);
     BSP_LCD_SetBackColor(LCD_COLOR_WHITE);
     BSP_LCD_SetTextColor(LCD_COLOR_BLUE);
     drawDrop(BSP_LCD_GetXSize()/2+15,195,3);    //Draw drop
+}
+
+void drawOutTemp(){
+    BSP_LCD_SetTextColor(LCD_COLOR_BLACK);
+    BSP_LCD_SetFont(&Font24);
+    char buffer[10] = {0};
+    sprintf(buffer,"%2.1fC ", thermistorValue);
+    BSP_LCD_DisplayStringAt(13, 130, (uint8_t *)buffer, LEFT_MODE);
 }
 
 

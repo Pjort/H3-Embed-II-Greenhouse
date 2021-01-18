@@ -4,6 +4,7 @@
 #include "mbed.h"
 #include "data.h"
 #include "DHT.h"
+#include <cstdio>
 
 #define MAX_SAMPLES  5
 
@@ -11,6 +12,7 @@ AnalogIn adc_temp(ADC_TEMP);
 AnalogIn lightSensor(A0); 
 DigitalInOut Led1(D3);
 DHT dht(D4,DHT22);  
+AnalogIn thermistor(A1);
 
 int sampI = 0;
 float light[MAX_SAMPLES] = {0};
@@ -62,10 +64,26 @@ void calcLightSensor(){
     }
 }
 
+void readThermistor(){
+    unsigned int a, beta = 3975;
+    float temperature, resistance;
+
+    a = thermistor.read_u16(); /* Read analog value */
+    
+    /* Calculate the resistance of the thermistor from analog votage read. */
+    resistance= (float) 10000.0 * ((65536.0 / a) - 1.0);
+    
+    /* Convert the resistance to temperature using Steinhart's Hart equation */
+    temperature=(1/((log(resistance/10000.0)/beta) + (1.0/298.15)))-273.15; 
+    thermistorValue = temperature;
+    //printf("%2.1f",temperature);
+}
+
 void readSensors(){
     readAdcTemp();
     calcLightSensor();
     readDHT();
+    readThermistor();
     sampI = 0;
 }
 
@@ -74,7 +92,9 @@ void sensorSampling(){
         light[sampI] = readLightSensor();
         sampI ++;
     }
+    
 }
+
 
 
 #endif

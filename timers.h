@@ -18,7 +18,7 @@ unsigned long lastSensorRead = 0;
 
 int waterings = 0;
 int wateringActive = 0;
-int wateringDelay = 6000; //600000ms =  10mins
+int wateringDelay = 600000; //600000 ms =  10 mins
 unsigned long lastWatering = 0;
 
 time_t timeNow;
