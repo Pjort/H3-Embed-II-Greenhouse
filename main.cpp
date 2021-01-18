@@ -39,8 +39,6 @@ int main()
     while (true) {
 
         runStates();
-        readAdcTemp();
-        drawDateTime();
 
         //printf("DEBUG - Message \n");
     }

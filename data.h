@@ -7,6 +7,8 @@
 
 float adcTemp;
 
+float lightValue;
+
 char currentMessage[32] = {0};
 
 char unitName[32] = "Greenhouse";

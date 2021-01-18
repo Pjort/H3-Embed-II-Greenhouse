@@ -3,10 +3,10 @@
 #include "timers.h"
 #include "data.h"
 #include "lcd.h"
-#include <cstdio>
+#include "sensors.h"
 
 
-enum State {STARTUP, IDLE, READ_SENSOR, UPDATE_SCREEN, INTERUPT};
+enum State {STARTUP, IDLE, SAMPLE_SENSOR, READ_SENSOR, UPDATE_SCREEN, INTERUPT};
 
 enum StartupInput {NOTHING,NAME,NUMBER};
 
@@ -21,7 +21,6 @@ void runStates(){
     switch (currentState) {
         case STARTUP:
 
-            //printf("%i",currentStartupInput);
 
             if (currentStartupInput == NOTHING) {
                 printf("Write unit name: (Press enter twice)");
@@ -46,6 +45,14 @@ void runStates(){
                 }
                 
             }
+
+            if (sensorSampleTimer()) {
+                sensorSampling();
+            }
+
+            if (sensorReadTimer()){
+                readSensors();
+            }
             
             break;
 
@@ -59,13 +66,26 @@ void runStates(){
                 currentState = READ_SENSOR;
             }
             
+            if (sensorSampleTimer()) {
+                currentState = SAMPLE_SENSOR;
+            }
+
+            if (secondTimer()){
+                currentState = UPDATE_SCREEN;
+            }
+            
+            break;
+        case SAMPLE_SENSOR:
+            sensorSampling();
+            currentState = IDLE;
             break;
         case READ_SENSOR:
-
+            readSensors();
+            checkWatering();
             currentState = UPDATE_SCREEN;
             break;
         case UPDATE_SCREEN:
-            
+            screenRefresh();
             currentState = IDLE;
             break;
         case INTERUPT:
