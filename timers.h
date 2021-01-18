@@ -4,7 +4,13 @@
 #include "mbed.h"
 #include "serialCom.h"
 
-unsigned long time_ms;
+int serialReadDelay = 100; //Delay in MS
+unsigned long lastSerialRead = 0;
+
+int sensorReadDelay = 2000; //Delay in MS
+unsigned long lastSensorRead = 0;
+
+
 time_t timeNow;
 
 unsigned long millis(){
@@ -16,14 +22,20 @@ void timersInit(){
     set_time(1610462467); // 12/01/2021 @ 14:41 (UTC)
     timeNow = time(NULL);
 
-    time_ms = 0; // This can hould about 50 days of milliseconds before repeating
-
 }
 
-void serialTimer(int delay){
-    if (millis() >= time_ms + delay){
-        time_ms = millis();
-        //printf("%lu \n",time_ms);
+int sensorReadTimer(){
+    if (millis() >= lastSensorRead + sensorReadDelay){
+        lastSensorRead = millis();
+        return 1;
+    }   
+    return 0;
+}
+
+void serialTimer(){
+    if (millis() >= lastSerialRead + serialReadDelay){
+        lastSerialRead = millis();
+        //printf("%lu \n",lastSerialRead);
 
         timeNow = time(NULL);
         //char buffer[32];

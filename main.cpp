@@ -10,8 +10,8 @@
 #include "lcd.h"
 #include "timers.h"
 #include "serialCom.h"
-
-AnalogIn adc_temp(ADC_TEMP);
+#include "sensors.h"
+#include "state.h"
 
 
 /**
@@ -22,17 +22,23 @@ AnalogIn adc_temp(ADC_TEMP);
 */
 int main()
 {
+    printf("STARTING UP! \n");
+
     lcdInit();
 
     serialInit();
 
     timersInit();
 
-    drawMainScreen();
+    drawStartupScreen();
+
+    printf("All initialized. Press Enter to start. \n");
 
     while (true) {
-        
-        serialTimer(10);
+
+        runStates();
+        readAdcTemp();
+        drawDateTime();
 
         //printf("DEBUG - Message \n");
     }

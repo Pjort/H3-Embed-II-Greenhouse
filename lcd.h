@@ -1,6 +1,9 @@
 #ifndef LCD
 #define LCD
 
+#include "data.h"
+#include "timers.h"
+
 //Screen size 480x272
 
 #define LCD_COLOR_SKY_DAY    ((uint32_t)0xFFAAEEFF)
@@ -8,7 +11,10 @@
 
 #include "stm32746g_discovery_lcd.h"
 
+//declare methods
 void drawMainScreenTexts();
+void drawTopMiddleText();
+void drawDateTime();
 
 void lcdInit(){
     BSP_LCD_Init();
@@ -40,6 +46,18 @@ void drawDrop(int xOffset,int yOffset, int scale){
     }
 }
 
+void drawStartupScreen(){
+    //Set font background
+    BSP_LCD_SetBackColor(LCD_COLOR_WHITE);
+
+    //Draw background
+    BSP_LCD_Clear(LCD_COLOR_WHITE);
+
+    BSP_LCD_SetTextColor(LCD_COLOR_BLACK);
+    BSP_LCD_SetFont(&Font16);
+
+    BSP_LCD_DisplayStringAt(0, BSP_LCD_GetYSize()/2, (uint8_t *)"Connect via serial and follow instructions", CENTER_MODE);
+}
 
 void drawMainScreen(){
     //Set font background
@@ -120,14 +138,10 @@ void drawMainScreenTexts(){
     BSP_LCD_SetTextColor(LCD_COLOR_BLACK);
 
     //Topbar left text
-    BSP_LCD_SetFont(&Font16);
-    BSP_LCD_DisplayStringAt(3, 5, (uint8_t *)"15:33", LEFT_MODE);
-    BSP_LCD_SetFont(&Font12);
-    BSP_LCD_DisplayStringAt(5, 23, (uint8_t *)"12-01-2021", LEFT_MODE);
+    drawDateTime();
 
     //Topbar middle text
-    BSP_LCD_SetFont(&Font24);
-    BSP_LCD_DisplayStringAt(0, 6, (uint8_t *)"GREENHOUSE #3", CENTER_MODE);
+    drawTopMiddleText();
 
     //Topbar right text
     BSP_LCD_SetFont(&Font16);
@@ -156,6 +170,30 @@ void drawMainScreenTexts(){
 
 
 }
+
+void drawTopMiddleText(){
+    //Topbar middle text
+    BSP_LCD_SetTextColor(LCD_COLOR_BLACK);
+    BSP_LCD_SetFont(&Font24);
+    char buffer[32] = {0};
+    sprintf(buffer,"%s #%s", unitName,unitNumber);
+    BSP_LCD_DisplayStringAt(0, 6, (uint8_t *)buffer, CENTER_MODE);
+}
+
+void drawDateTime(){
+    //Topbar left text
+    BSP_LCD_SetTextColor(LCD_COLOR_BLACK);
+    BSP_LCD_SetFont(&Font16);
+
+    char buffer[32];
+    strftime(buffer, sizeof(buffer), "%H:%M:%S", localtime(&timeNow));
+    BSP_LCD_DisplayStringAt(3, 5, (uint8_t *)buffer, LEFT_MODE);
+    BSP_LCD_SetFont(&Font12);
+     strftime(buffer, sizeof(buffer), "%Y-%m-%d", localtime(&timeNow));
+    BSP_LCD_DisplayStringAt(5, 23, (uint8_t *)buffer, LEFT_MODE);
+
+}
+
 
 
 

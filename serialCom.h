@@ -2,9 +2,8 @@
 #define serialCom
 
 #include "mbed.h"
-
-// Maximum number of element the application serialBuffer can contain
-#define MAXIMUM_BUFFER_SIZE 32
+#include "data.h"
+#include <cstdio>
 
 // Create a serialBufferedSerial object with a default baud rate.
 static BufferedSerial serial_port(USBTX, USBRX);
@@ -12,7 +11,6 @@ static BufferedSerial serial_port(USBTX, USBRX);
 // Application serialBuffer to receive the data
 char serialBuf[MAXIMUM_BUFFER_SIZE] = {0};
 char storedBuf[MAXIMUM_BUFFER_SIZE] = {0};
-char currentMessage[MAXIMUM_BUFFER_SIZE] = {0};
 
 void serialInit(){
     
@@ -35,7 +33,7 @@ void serialRead(){
                 currentMessage[i]=storedBuf[i];
                 storedBuf[i]=0;
             }
-            printf("%s \n",currentMessage);
+            printf("%s\n",currentMessage);
         }
         else if(serialBuf[i]!=0 & storedBuf[i]==0){
             storedBuf[i]=serialBuf[i];
@@ -51,8 +49,9 @@ void serialRead(){
         }
 
         serialBuf[i]=0;
-        //printf("%s \n",storedBuf);
     }
+
+    printf("");
 
 }
 #endif
