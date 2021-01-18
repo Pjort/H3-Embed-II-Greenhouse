@@ -28,6 +28,8 @@ void drawDay();
 void drawNight();
 void drawWatering();
 void drawLightValue();
+void drawHouseText();
+void screenRefresh();
 
 void lcdInit(){
     BSP_LCD_Init();
@@ -135,19 +137,14 @@ void drawMainScreenTexts(){
     drawLightValue();
 
     //House text
-    BSP_LCD_SetFont(&Font24);
-    BSP_LCD_SetBackColor(LCD_COLOR_INDOOR_DAY);
-    BSP_LCD_DisplayStringAt(0, 145, (uint8_t *)"18,0C", CENTER_MODE);
-    BSP_LCD_DisplayStringAt(0, 200, (uint8_t *)"90%  ", CENTER_MODE);
-    BSP_LCD_SetBackColor(LCD_COLOR_WHITE);
-    BSP_LCD_SetTextColor(LCD_COLOR_BLUE);
-    drawDrop(BSP_LCD_GetXSize()/2+15,195,3);    //Draw drop
+    drawHouseText();
 
 }
 
 void screenRefresh(){
     drawDateTime();
     drawLightValue();
+    drawHouseText();
 
     if(currentDrawnDayNight == DAY && currentDayNightCycle == NIGHT){
         drawMainScreen();
@@ -296,6 +293,20 @@ void drawLightValue(){
     char buffer[10] = {0};
     sprintf(buffer," %2.0f%%", lightValue);
     BSP_LCD_DisplayStringAt(25, 160, (uint8_t *)buffer, RIGHT_MODE);
+}
+
+void drawHouseText(){
+    //House text
+    BSP_LCD_SetFont(&Font24);
+    BSP_LCD_SetBackColor(LCD_COLOR_INDOOR_DAY);
+    char buffer[10] = {0};
+    sprintf(buffer," %2.1fC  ", dhtTemp);
+    BSP_LCD_DisplayStringAt(0, 145, (uint8_t *)buffer, CENTER_MODE);
+    sprintf(buffer,"%2.0f%%  ", dhtHumid);
+    BSP_LCD_DisplayStringAt(0, 200, (uint8_t *)buffer, CENTER_MODE);
+    BSP_LCD_SetBackColor(LCD_COLOR_WHITE);
+    BSP_LCD_SetTextColor(LCD_COLOR_BLUE);
+    drawDrop(BSP_LCD_GetXSize()/2+15,195,3);    //Draw drop
 }
 
 

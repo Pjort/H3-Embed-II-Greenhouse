@@ -7,7 +7,10 @@
 
 float adcTemp;
 
-float lightValue;
+float lightValue=60.0f;
+
+float dhtTemp=18.2f;
+float dhtHumid=90.0f;
 
 char currentMessage[32] = {0};
 

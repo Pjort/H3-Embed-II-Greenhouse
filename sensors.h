@@ -3,18 +3,37 @@
 
 #include "mbed.h"
 #include "data.h"
+#include "DHT.h"
 
 #define MAX_SAMPLES  5
 
 AnalogIn adc_temp(ADC_TEMP);
 AnalogIn lightSensor(A0); 
 DigitalInOut Led1(D3);
+DHT dht(D4,DHT22);  
 
 int sampI = 0;
 float light[MAX_SAMPLES] = {0};
 
+int err;
 
+void readDHT(){
+    err = dht.readData();
+    if (err == 0) {
+        dhtTemp=dht.ReadTemperature(CELCIUS);
+        //printf("Temperature is %4.1f C \r\n",dht.ReadTemperature(CELCIUS));
+        //printf("Temperature is %4.2f F \r\n",sensor.ReadTemperature(FARENHEIT));
+        //printf("Temperature is %4.2f K \r\n",sensor.ReadTemperature(KELVIN));
 
+        dhtHumid=dht.ReadHumidity();
+        //printf("Humidity is %4.1f%% \r\n",dht.ReadHumidity());
+        //printf("Dew point is %4.2f  \r\n",sensor.CalcdewPoint(sensor.ReadTemperature(CELCIUS), sensor.ReadHumidity()));
+        //printf("Dew point (fast) is %4.2f  \r\n",sensor.CalcdewPointFast(sensor.ReadTemperature(CELCIUS), sensor.ReadHumidity()));
+    } else{
+        //printf("\r\nErr %i \n",err);
+    }
+    
+}
 
 void readAdcTemp(){
     adcTemp = (adc_temp.read()*100);
@@ -46,7 +65,7 @@ void calcLightSensor(){
 void readSensors(){
     readAdcTemp();
     calcLightSensor();
-    
+    readDHT();
     sampI = 0;
 }
 
