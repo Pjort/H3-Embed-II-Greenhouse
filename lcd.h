@@ -11,8 +11,14 @@
 
 #include "stm32746g_discovery_lcd.h"
 
+//
+enum {NIGHT,DAY};
+int currentDayNightCycle = NIGHT;
+int currentMainScreenPage = 0;
+
 //declare methods
 void drawMainScreenTexts();
+void updateTexts();
 void drawTopMiddleText();
 void drawDateTime();
 
@@ -63,39 +69,52 @@ void drawMainScreen(){
     //Set font background
     BSP_LCD_SetBackColor(LCD_COLOR_WHITE);
 
-    //Draw background
-    BSP_LCD_Clear(LCD_COLOR_SKY_DAY);
 
-    //Draw top bar
+    if(currentDayNightCycle==DAY){
+        //Draw day background
+        BSP_LCD_Clear(LCD_COLOR_SKY_DAY);
+
+        //Draw sun
+        BSP_LCD_SetTextColor(LCD_COLOR_YELLOW);
+        BSP_LCD_FillCircle(390+28, 46+28, 28);
+        BSP_LCD_SetTextColor(LCD_COLOR_BLACK);
+        BSP_LCD_DrawCircle(390+28, 46+28, 28);
+
+        //Draw day grass bottom
+        BSP_LCD_SetTextColor(LCD_COLOR_GREEN);
+        BSP_LCD_FillRect (0, BSP_LCD_GetYSize()-15, BSP_LCD_GetXSize(), BSP_LCD_GetYSize());
+        BSP_LCD_SetTextColor(LCD_COLOR_BLACK);
+        BSP_LCD_DrawHLine (0,BSP_LCD_GetYSize()-16,BSP_LCD_GetXSize());
+
+    }else if (currentDayNightCycle==NIGHT) {
+        //Draw night background
+        BSP_LCD_Clear(LCD_COLOR_DARKBLUE);
+
+        //Draw moon
+        BSP_LCD_SetTextColor(LCD_COLOR_YELLOW);
+        BSP_LCD_FillCircle(390+28, 46+28, 28);
+        BSP_LCD_SetTextColor(LCD_COLOR_BLACK);
+        BSP_LCD_DrawCircle(390+28, 46+28, 28);
+        BSP_LCD_SetTextColor(LCD_COLOR_DARKBLUE);
+        BSP_LCD_FillCircle(390+28+15, 46+28, 28);
+        BSP_LCD_SetTextColor(LCD_COLOR_BLACK);
+        BSP_LCD_DrawCircle(390+28+15, 46+28, 28);
+        BSP_LCD_SetTextColor(LCD_COLOR_DARKBLUE);
+        BSP_LCD_FillRect (390+28+8, 46, 50, 66);
+
+        //Draw night grass bottom
+        BSP_LCD_SetTextColor(LCD_COLOR_DARKGREEN);
+        BSP_LCD_FillRect (0, BSP_LCD_GetYSize()-15, BSP_LCD_GetXSize(), BSP_LCD_GetYSize());
+        BSP_LCD_SetTextColor(LCD_COLOR_BLACK);
+        BSP_LCD_DrawHLine (0,BSP_LCD_GetYSize()-16,BSP_LCD_GetXSize());
+    }
+
+        //Draw top bar
     BSP_LCD_SetTextColor(LCD_COLOR_WHITE);
     BSP_LCD_FillRect (0, 0, BSP_LCD_GetXSize()-1, 38);
     BSP_LCD_SetTextColor(LCD_COLOR_BLACK);
     BSP_LCD_DrawRect (0, 0, BSP_LCD_GetXSize()-1, 38);
 
-    //Draw sun
-    BSP_LCD_SetTextColor(LCD_COLOR_YELLOW);
-    BSP_LCD_FillCircle(390+28, 46+28, 28);
-    BSP_LCD_SetTextColor(LCD_COLOR_BLACK);
-    BSP_LCD_DrawCircle(390+28, 46+28, 28);
-
-    //Draw moon
-    BSP_LCD_SetTextColor(LCD_COLOR_YELLOW);
-    BSP_LCD_FillCircle(390+28, 46+28, 28);
-    BSP_LCD_SetTextColor(LCD_COLOR_BLACK);
-    BSP_LCD_DrawCircle(390+28, 46+28, 28);
-    BSP_LCD_SetTextColor(LCD_COLOR_SKY_DAY);
-    BSP_LCD_FillCircle(390+28+15, 46+28, 28);
-    BSP_LCD_SetTextColor(LCD_COLOR_BLACK);
-    BSP_LCD_DrawCircle(390+28+15, 46+28, 28);
-    BSP_LCD_SetTextColor(LCD_COLOR_SKY_DAY);
-    BSP_LCD_FillRect (390+28+8, 46, 50, 66);
-
-
-    //Draw grass bottom
-    BSP_LCD_SetTextColor(LCD_COLOR_GREEN);
-    BSP_LCD_FillRect (0, BSP_LCD_GetYSize()-15, BSP_LCD_GetXSize(), BSP_LCD_GetYSize());
-    BSP_LCD_SetTextColor(LCD_COLOR_BLACK);
-    BSP_LCD_DrawHLine (0,BSP_LCD_GetYSize()-16,BSP_LCD_GetXSize());
 
     //Draw greenhouse from 5 points
     Point housePoints[5];
@@ -145,9 +164,11 @@ void drawMainScreenTexts(){
 
     //Topbar right text
     BSP_LCD_SetFont(&Font16);
-    BSP_LCD_DisplayStringAt(2, 5, (uint8_t *)"Version", RIGHT_MODE);
+    BSP_LCD_DisplayStringAt(2, 5, (uint8_t *)"MBED OS", RIGHT_MODE);
+    char buffer[32];
+    sprintf(buffer, "v%d.%d.%d", MBED_MAJOR_VERSION, MBED_MINOR_VERSION, MBED_PATCH_VERSION);
     BSP_LCD_SetFont(&Font12);
-    BSP_LCD_DisplayStringAt(5, 23, (uint8_t *)"6.01.2", RIGHT_MODE);
+    BSP_LCD_DisplayStringAt(5, 23, (uint8_t *)buffer, RIGHT_MODE);
 
     //Left box text
     BSP_LCD_SetFont(&Font16);
@@ -168,7 +189,11 @@ void drawMainScreenTexts(){
     BSP_LCD_DisplayStringAt(0, 200, (uint8_t *)"90%  ", CENTER_MODE);
     BSP_LCD_SetBackColor(LCD_COLOR_WHITE);
 
+}
 
+void updateTexts(){
+    drawTopMiddleText();
+    drawDateTime();
 }
 
 void drawTopMiddleText(){

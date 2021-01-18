@@ -32,6 +32,8 @@ int main()
 
     drawStartupScreen();
 
+    printf("mbed-os-rev: %d.%d.%d\n", MBED_MAJOR_VERSION, MBED_MINOR_VERSION, MBED_PATCH_VERSION);
+
     printf("All initialized. Press Enter to start. \n");
 
     while (true) {

@@ -48,6 +48,7 @@ void runStates(){
             }
             
             break;
+
         case IDLE:
             if(mainScreenDrawn == 0){       //Check that first time IDLE mainscreen is drawn
                 drawMainScreen();
@@ -60,7 +61,7 @@ void runStates(){
             
             break;
         case READ_SENSOR:
-            
+
             currentState = UPDATE_SCREEN;
             break;
         case UPDATE_SCREEN:
