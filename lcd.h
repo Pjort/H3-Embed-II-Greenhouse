@@ -32,6 +32,7 @@ void drawLightValue();
 void drawHouseText();
 void screenRefresh();
 void drawOutTemp();
+void drawCloud();
 
 void lcdInit(){
     BSP_LCD_Init();
@@ -138,6 +139,8 @@ void drawMainScreenTexts(){
 
     //House text
     drawHouseText();
+
+    drawCloud();
 
 }
 
@@ -348,6 +351,19 @@ void drawOutTemp(){
     char buffer[10] = {0};
     sprintf(buffer,"%2.1fC ", thermistorValue);
     BSP_LCD_DisplayStringAt(13, 130, (uint8_t *)buffer, LEFT_MODE);
+}
+
+void drawCloud(){
+
+    BSP_LCD_SetTextColor(LCD_COLOR_LIGHTGRAY);
+    BSP_LCD_FillCircle(397, 46+35, 20);
+    BSP_LCD_SetTextColor(LCD_COLOR_BLACK);
+    BSP_LCD_DrawCircle(397, 46+35, 20);
+    BSP_LCD_FillEllipse (397, 46+35+7, 42, 14);
+    BSP_LCD_SetTextColor(LCD_COLOR_LIGHTGRAY);
+    BSP_LCD_FillEllipse (397, 46+35+7, 40, 13);
+    BSP_LCD_FillCircle(397, 46+35, 14);
+    
 }
 
 

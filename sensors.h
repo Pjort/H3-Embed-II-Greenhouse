@@ -4,7 +4,6 @@
 #include "mbed.h"
 #include "data.h"
 #include "DHT.h"
-#include <cstdio>
 
 #define MAX_SAMPLES  5
 

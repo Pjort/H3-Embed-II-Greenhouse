@@ -10,8 +10,8 @@ enum State {STARTUP, IDLE, SAMPLE_SENSOR, READ_SENSOR, UPDATE_SCREEN, INTERUPT};
 
 enum StartupInput {NOTHING,NAME,NUMBER};
 
-int currentState = STARTUP;
-//int currentState = IDLE;
+//int currentState = STARTUP;
+int currentState = IDLE;
 int currentStartupInput = NOTHING;
 
 int mainScreenDrawn = 0;
