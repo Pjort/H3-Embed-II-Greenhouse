@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['maximum_5fbuffer_5fsize_21',['MAXIMUM_BUFFER_SIZE',['../serial_com_8h.html#a3d3fa6d1b6fb27c4cb3ed1c97ba7096b',1,'serialCom.h']]]
+  ['dht_5fdata_5fbit_5fcount_258',['DHT_DATA_BIT_COUNT',['../_d_h_t_8h.html#abdf3f0ea6ce6e10cf90a49e268f73199',1,'DHT.h']]]
 ];

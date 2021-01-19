@@ -94,21 +94,398 @@ $(document).ready(function(){initNavTree('lcd_8h.html',''); initResizable(); });
 
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">lcd.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;stm32746g_discovery_lcd.h&quot;</code><br />
+<div class="textblock"><code>#include &quot;mbed.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="data_8h_source.html">data.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="timers_8h_source.html">timers.h</a>&quot;</code><br />
+<code>#include &quot;stm32746g_discovery_lcd.h&quot;</code><br />
 </div>
 <p><a href="lcd_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a86f63bec6fda31540c2a9b882e560db5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lcd_8h.html#a86f63bec6fda31540c2a9b882e560db5">LCD_COLOR_SKY_DAY</a>&#160;&#160;&#160;((uint32_t)0xFFAAEEFF)</td></tr>
+<tr class="separator:a86f63bec6fda31540c2a9b882e560db5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8965c071d43f6460601e00cdaa94975f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lcd_8h.html#a8965c071d43f6460601e00cdaa94975f">LCD_COLOR_INDOOR_DAY</a>&#160;&#160;&#160;((uint32_t)0xFFd5f6ff)</td></tr>
+<tr class="separator:a8965c071d43f6460601e00cdaa94975f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:ad0241654ee688cf633dc0457ba415471"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lcd_8h.html#ad0241654ee688cf633dc0457ba415471">drawMainScreenTexts</a> ()</td></tr>
+<tr class="separator:ad0241654ee688cf633dc0457ba415471"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e6c2e1eef0ace4c82bfc56a80fc24eb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lcd_8h.html#a0e6c2e1eef0ace4c82bfc56a80fc24eb">updateTexts</a> ()</td></tr>
+<tr class="separator:a0e6c2e1eef0ace4c82bfc56a80fc24eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3aa4e57ba57dedcc13f7b3ce43bde77"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lcd_8h.html#ac3aa4e57ba57dedcc13f7b3ce43bde77">drawTopMiddleText</a> ()</td></tr>
+<tr class="separator:ac3aa4e57ba57dedcc13f7b3ce43bde77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad53bdcab299a981a5f4422e13502e8ce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lcd_8h.html#ad53bdcab299a981a5f4422e13502e8ce">drawDateTime</a> ()</td></tr>
+<tr class="separator:ad53bdcab299a981a5f4422e13502e8ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae208849261a7ad8a9491e5a6361f7ff1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lcd_8h.html#ae208849261a7ad8a9491e5a6361f7ff1">drawDrop</a> (int xOffset, int yOffset, int scale)</td></tr>
+<tr class="separator:ae208849261a7ad8a9491e5a6361f7ff1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf687aabadc508ff25ac8ea8f52c0e65"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lcd_8h.html#aaf687aabadc508ff25ac8ea8f52c0e65">drawWatering</a> (int xOffset, int yOffset, int scale)</td></tr>
+<tr class="separator:aaf687aabadc508ff25ac8ea8f52c0e65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a947b745a5f5afd33abb3d49f1443e5a6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lcd_8h.html#a947b745a5f5afd33abb3d49f1443e5a6">drawBulb</a> (int xOffset, int yOffset, int scale)</td></tr>
+<tr class="separator:a947b745a5f5afd33abb3d49f1443e5a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad48a4c307fc7b3a96c781a04b1cc1ce4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lcd_8h.html#ad48a4c307fc7b3a96c781a04b1cc1ce4">drawDay</a> ()</td></tr>
+<tr class="separator:ad48a4c307fc7b3a96c781a04b1cc1ce4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a739aff045a7b55e4e010e775d9f0d233"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lcd_8h.html#a739aff045a7b55e4e010e775d9f0d233">drawNight</a> ()</td></tr>
+<tr class="separator:a739aff045a7b55e4e010e775d9f0d233"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37fa35b64fa61840eb1f4f6d8402d32b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lcd_8h.html#a37fa35b64fa61840eb1f4f6d8402d32b">drawWatering</a> ()</td></tr>
+<tr class="separator:a37fa35b64fa61840eb1f4f6d8402d32b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0f01e476c825b1a16203a0565a138b1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lcd_8h.html#af0f01e476c825b1a16203a0565a138b1">drawLightValue</a> ()</td></tr>
+<tr class="separator:af0f01e476c825b1a16203a0565a138b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86b67fa58dc1123123a5127c9ec21349"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lcd_8h.html#a86b67fa58dc1123123a5127c9ec21349">drawHouseText</a> ()</td></tr>
+<tr class="separator:a86b67fa58dc1123123a5127c9ec21349"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2bffe8781abd007943a0113336fa7282"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lcd_8h.html#a2bffe8781abd007943a0113336fa7282">screenRefresh</a> ()</td></tr>
+<tr class="separator:a2bffe8781abd007943a0113336fa7282"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afba95866ccd1a39be537269554aac842"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lcd_8h.html#afba95866ccd1a39be537269554aac842">drawOutTemp</a> ()</td></tr>
+<tr class="separator:afba95866ccd1a39be537269554aac842"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3004c9c4fb128520f24f4407dca4f8cf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lcd_8h.html#a3004c9c4fb128520f24f4407dca4f8cf">lcdInit</a> ()</td></tr>
 <tr class="separator:a3004c9c4fb128520f24f4407dca4f8cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b9805a59b6ba85512f666d60b95bd62"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lcd_8h.html#a4b9805a59b6ba85512f666d60b95bd62">drawStartupScreen</a> ()</td></tr>
+<tr class="separator:a4b9805a59b6ba85512f666d60b95bd62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a808c0f53e6a1ad304ca947358822805d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lcd_8h.html#a808c0f53e6a1ad304ca947358822805d">drawMainScreen</a> ()</td></tr>
+<tr class="separator:a808c0f53e6a1ad304ca947358822805d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a1c510dffb36baa803c377bdfded4101a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lcd_8h.html#a1c510dffb36baa803c377bdfded4101a">currentMainScreenPage</a> = 0</td></tr>
+<tr class="separator:a1c510dffb36baa803c377bdfded4101a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac76cdd828639edff49860238e087fa12"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lcd_8h.html#ac76cdd828639edff49860238e087fa12">currentDrawnDayNight</a> = <a class="el" href="timers_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba285422c5a00f46be59fd905a9e255139">NIGHT</a></td></tr>
+<tr class="separator:ac76cdd828639edff49860238e087fa12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2628566a650b0a470bdb696f883e4a2b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lcd_8h.html#a2628566a650b0a470bdb696f883e4a2b">wateringDrawn</a> = 0</td></tr>
+<tr class="separator:a2628566a650b0a470bdb696f883e4a2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a086bcaeca57b4d61e9cfb1424a075f5e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lcd_8h.html#a086bcaeca57b4d61e9cfb1424a075f5e">pixelArtDrop</a> [10][10]</td></tr>
+<tr class="separator:a086bcaeca57b4d61e9cfb1424a075f5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad54aff7f34b98d33963e23aae794b9c4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lcd_8h.html#ad54aff7f34b98d33963e23aae794b9c4">pixelArtWatering</a> [10][10]</td></tr>
+<tr class="separator:ad54aff7f34b98d33963e23aae794b9c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21772ec58c3b63873462dbad36a62829"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lcd_8h.html#a21772ec58c3b63873462dbad36a62829">pixelArtBulb</a> [10][10]</td></tr>
+<tr class="separator:a21772ec58c3b63873462dbad36a62829"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a8965c071d43f6460601e00cdaa94975f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8965c071d43f6460601e00cdaa94975f">&#9670;&nbsp;</a></span>LCD_COLOR_INDOOR_DAY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_COLOR_INDOOR_DAY&#160;&#160;&#160;((uint32_t)0xFFd5f6ff)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a86f63bec6fda31540c2a9b882e560db5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86f63bec6fda31540c2a9b882e560db5">&#9670;&nbsp;</a></span>LCD_COLOR_SKY_DAY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_COLOR_SKY_DAY&#160;&#160;&#160;((uint32_t)0xFFAAEEFF)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a947b745a5f5afd33abb3d49f1443e5a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a947b745a5f5afd33abb3d49f1443e5a6">&#9670;&nbsp;</a></span>drawBulb()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void drawBulb </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>xOffset</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>yOffset</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>scale</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad53bdcab299a981a5f4422e13502e8ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad53bdcab299a981a5f4422e13502e8ce">&#9670;&nbsp;</a></span>drawDateTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void drawDateTime </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad48a4c307fc7b3a96c781a04b1cc1ce4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad48a4c307fc7b3a96c781a04b1cc1ce4">&#9670;&nbsp;</a></span>drawDay()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void drawDay </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae208849261a7ad8a9491e5a6361f7ff1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae208849261a7ad8a9491e5a6361f7ff1">&#9670;&nbsp;</a></span>drawDrop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void drawDrop </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>xOffset</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>yOffset</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>scale</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a86b67fa58dc1123123a5127c9ec21349"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86b67fa58dc1123123a5127c9ec21349">&#9670;&nbsp;</a></span>drawHouseText()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void drawHouseText </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af0f01e476c825b1a16203a0565a138b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0f01e476c825b1a16203a0565a138b1">&#9670;&nbsp;</a></span>drawLightValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void drawLightValue </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a808c0f53e6a1ad304ca947358822805d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a808c0f53e6a1ad304ca947358822805d">&#9670;&nbsp;</a></span>drawMainScreen()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void drawMainScreen </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad0241654ee688cf633dc0457ba415471"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0241654ee688cf633dc0457ba415471">&#9670;&nbsp;</a></span>drawMainScreenTexts()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void drawMainScreenTexts </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a739aff045a7b55e4e010e775d9f0d233"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a739aff045a7b55e4e010e775d9f0d233">&#9670;&nbsp;</a></span>drawNight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void drawNight </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afba95866ccd1a39be537269554aac842"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afba95866ccd1a39be537269554aac842">&#9670;&nbsp;</a></span>drawOutTemp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void drawOutTemp </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4b9805a59b6ba85512f666d60b95bd62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b9805a59b6ba85512f666d60b95bd62">&#9670;&nbsp;</a></span>drawStartupScreen()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void drawStartupScreen </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac3aa4e57ba57dedcc13f7b3ce43bde77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3aa4e57ba57dedcc13f7b3ce43bde77">&#9670;&nbsp;</a></span>drawTopMiddleText()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void drawTopMiddleText </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a37fa35b64fa61840eb1f4f6d8402d32b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37fa35b64fa61840eb1f4f6d8402d32b">&#9670;&nbsp;</a></span>drawWatering() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void drawWatering </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aaf687aabadc508ff25ac8ea8f52c0e65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf687aabadc508ff25ac8ea8f52c0e65">&#9670;&nbsp;</a></span>drawWatering() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void drawWatering </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>xOffset</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>yOffset</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>scale</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a3004c9c4fb128520f24f4407dca4f8cf"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3004c9c4fb128520f24f4407dca4f8cf">&#9670;&nbsp;</a></span>lcdInit()</h2>
 
@@ -120,6 +497,161 @@ Functions</h2></td></tr>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2bffe8781abd007943a0113336fa7282"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2bffe8781abd007943a0113336fa7282">&#9670;&nbsp;</a></span>screenRefresh()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void screenRefresh </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0e6c2e1eef0ace4c82bfc56a80fc24eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e6c2e1eef0ace4c82bfc56a80fc24eb">&#9670;&nbsp;</a></span>updateTexts()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void updateTexts </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="ac76cdd828639edff49860238e087fa12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac76cdd828639edff49860238e087fa12">&#9670;&nbsp;</a></span>currentDrawnDayNight</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int currentDrawnDayNight = <a class="el" href="timers_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba285422c5a00f46be59fd905a9e255139">NIGHT</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1c510dffb36baa803c377bdfded4101a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c510dffb36baa803c377bdfded4101a">&#9670;&nbsp;</a></span>currentMainScreenPage</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int currentMainScreenPage = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a21772ec58c3b63873462dbad36a62829"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21772ec58c3b63873462dbad36a62829">&#9670;&nbsp;</a></span>pixelArtBulb</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int pixelArtBulb[10][10]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= {    </div>
+<div class="line">    {0,0,0,1,1,1,1,0,0,0},</div>
+<div class="line">    {0,0,0,1,1,1,1,0,0,0},</div>
+<div class="line">    {0,0,0,1,1,1,1,0,0,0},</div>
+<div class="line">    {0,0,1,0,1,1,0,1,0,0},</div>
+<div class="line">    {0,1,0,0,1,1,0,0,1,0},</div>
+<div class="line">    {1,0,0,1,0,0,1,0,0,1},</div>
+<div class="line">    {1,0,1,0,0,0,0,1,0,1},</div>
+<div class="line">    {1,0,0,0,1,1,0,0,0,1},</div>
+<div class="line">    {0,1,0,0,0,0,0,0,1,0},</div>
+<div class="line">    {0,0,1,1,1,1,1,1,0,0},</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a086bcaeca57b4d61e9cfb1424a075f5e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a086bcaeca57b4d61e9cfb1424a075f5e">&#9670;&nbsp;</a></span>pixelArtDrop</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int pixelArtDrop[10][10]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= {    </div>
+<div class="line">    {0,0,0,0,1,1,0,0,0,0},</div>
+<div class="line">    {0,0,0,1,1,1,1,0,0,0},</div>
+<div class="line">    {0,0,1,1,1,1,1,1,0,0},</div>
+<div class="line">    {0,1,1,1,1,1,1,1,1,0},</div>
+<div class="line">    {1,1,1,1,1,1,1,1,1,1},</div>
+<div class="line">    {1,1,1,1,1,1,1,0,0,1},</div>
+<div class="line">    {1,1,1,1,1,0,0,0,1,1},</div>
+<div class="line">    {0,1,1,1,1,1,1,1,1,0},</div>
+<div class="line">    {0,0,0,0,0,0,0,0,0,0},</div>
+<div class="line">    {0,0,0,0,0,0,0,0,0,0},</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ad54aff7f34b98d33963e23aae794b9c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad54aff7f34b98d33963e23aae794b9c4">&#9670;&nbsp;</a></span>pixelArtWatering</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int pixelArtWatering[10][10]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= {    </div>
+<div class="line">    {0,0,1,0,0,0,0,1,0,0},</div>
+<div class="line">    {1,0,0,1,0,0,1,0,0,1},</div>
+<div class="line">    {0,1,0,0,0,0,0,0,1,0},</div>
+<div class="line">    {0,0,0,1,0,0,1,0,0,0},</div>
+<div class="line">    {0,0,0,0,0,0,0,0,0,0},</div>
+<div class="line">    {0,0,0,0,1,1,0,0,0,0},</div>
+<div class="line">    {0,0,0,1,1,1,1,0,0,0},</div>
+<div class="line">    {0,0,0,0,1,1,0,0,0,0},</div>
+<div class="line">    {0,0,0,0,1,1,0,0,0,0},</div>
+<div class="line">    {0,0,0,0,1,1,0,0,0,0},</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a2628566a650b0a470bdb696f883e4a2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2628566a650b0a470bdb696f883e4a2b">&#9670;&nbsp;</a></span>wateringDrawn</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int wateringDrawn = 0</td>
         </tr>
       </table>
 </div><div class="memdoc">

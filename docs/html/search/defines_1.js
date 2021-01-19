@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['num_5fof_5fblocks_20',['NUM_OF_BLOCKS',['../main_8cpp.html#a5f4360c51ca119c52c7e7bbead4c4dbe',1,'main.cpp']]]
+  ['lcd_5fcolor_5findoor_5fday_259',['LCD_COLOR_INDOOR_DAY',['../lcd_8h.html#a8965c071d43f6460601e00cdaa94975f',1,'lcd.h']]],
+  ['lcd_5fcolor_5fsky_5fday_260',['LCD_COLOR_SKY_DAY',['../lcd_8h.html#a86f63bec6fda31540c2a9b882e560db5',1,'lcd.h']]]
 ];

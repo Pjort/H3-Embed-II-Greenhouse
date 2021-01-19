@@ -94,7 +94,6 @@ $(document).ready(function(){initNavTree('serial_com_8h.html',''); initResizable
 
 <div class="header">
   <div class="summary">
-<a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
@@ -102,14 +101,11 @@ $(document).ready(function(){initNavTree('serial_com_8h.html',''); initResizable
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;mbed.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="data_8h_source.html">data.h</a>&quot;</code><br />
+<code>#include &lt;cstdio&gt;</code><br />
 </div>
 <p><a href="serial_com_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:a3d3fa6d1b6fb27c4cb3ed1c97ba7096b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="serial_com_8h.html#a3d3fa6d1b6fb27c4cb3ed1c97ba7096b">MAXIMUM_BUFFER_SIZE</a>&#160;&#160;&#160;32</td></tr>
-<tr class="separator:a3d3fa6d1b6fb27c4cb3ed1c97ba7096b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ae9a165b0757884687a51a58b1380b5d5"><td class="memItemLeft" align="right" valign="top">static BufferedSerial&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="serial_com_8h.html#ae9a165b0757884687a51a58b1380b5d5">serial_port</a> (USBTX, USBRX)</td></tr>
@@ -121,24 +117,11 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a30af7f7219d34d930bf5d05217455ce4"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="serial_com_8h.html#a30af7f7219d34d930bf5d05217455ce4">buf</a> [<a class="el" href="serial_com_8h.html#a3d3fa6d1b6fb27c4cb3ed1c97ba7096b">MAXIMUM_BUFFER_SIZE</a>] = {0}</td></tr>
-<tr class="separator:a30af7f7219d34d930bf5d05217455ce4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac30d6d290cc4320e371bc89f7da1e00b"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="serial_com_8h.html#ac30d6d290cc4320e371bc89f7da1e00b">serialBuf</a> [<a class="el" href="data_8h.html#a3d3fa6d1b6fb27c4cb3ed1c97ba7096b">MAXIMUM_BUFFER_SIZE</a>] = {0}</td></tr>
+<tr class="separator:ac30d6d290cc4320e371bc89f7da1e00b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab23cd5ff72251c1117de163a76110c5"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="serial_com_8h.html#aab23cd5ff72251c1117de163a76110c5">storedBuf</a> [<a class="el" href="data_8h.html#a3d3fa6d1b6fb27c4cb3ed1c97ba7096b">MAXIMUM_BUFFER_SIZE</a>] = {0}</td></tr>
+<tr class="separator:aab23cd5ff72251c1117de163a76110c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="a3d3fa6d1b6fb27c4cb3ed1c97ba7096b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3d3fa6d1b6fb27c4cb3ed1c97ba7096b">&#9670;&nbsp;</a></span>MAXIMUM_BUFFER_SIZE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define MAXIMUM_BUFFER_SIZE&#160;&#160;&#160;32</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="ae9a165b0757884687a51a58b1380b5d5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae9a165b0757884687a51a58b1380b5d5">&#9670;&nbsp;</a></span>serial_port()</h2>
@@ -211,14 +194,28 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
-<a id="a30af7f7219d34d930bf5d05217455ce4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a30af7f7219d34d930bf5d05217455ce4">&#9670;&nbsp;</a></span>buf</h2>
+<a id="ac30d6d290cc4320e371bc89f7da1e00b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac30d6d290cc4320e371bc89f7da1e00b">&#9670;&nbsp;</a></span>serialBuf</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">char buf[<a class="el" href="serial_com_8h.html#a3d3fa6d1b6fb27c4cb3ed1c97ba7096b">MAXIMUM_BUFFER_SIZE</a>] = {0}</td>
+          <td class="memname">char serialBuf[<a class="el" href="data_8h.html#a3d3fa6d1b6fb27c4cb3ed1c97ba7096b">MAXIMUM_BUFFER_SIZE</a>] = {0}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aab23cd5ff72251c1117de163a76110c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab23cd5ff72251c1117de163a76110c5">&#9670;&nbsp;</a></span>storedBuf</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char storedBuf[<a class="el" href="data_8h.html#a3d3fa6d1b6fb27c4cb3ed1c97ba7096b">MAXIMUM_BUFFER_SIZE</a>] = {0}</td>
         </tr>
       </table>
 </div><div class="memdoc">

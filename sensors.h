@@ -42,8 +42,8 @@ void readAdcTemp(){
 }
 
 float readLightSensor(){
-    //return(lightSensor.read()/0.630*100); //3v3 mode
-    return(lightSensor.read()*100);  //5v mode
+    return(lightSensor.read()/0.630*100); //3v3 mode
+    //return(lightSensor.read()*100);  //5v mode
 }
 
 void calcLightSensor(){

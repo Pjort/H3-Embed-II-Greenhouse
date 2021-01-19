@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['sd_5fok_21',['SD_OK',['../main_8cpp.html#a5bdc195dc5763a801ec3cd4bf8f448c9',1,'main.cpp']]]
+  ['max_5fsamples_261',['MAX_SAMPLES',['../sensors_8h.html#a78f316da3a87bf72cb1647786b64bf0e',1,'sensors.h']]],
+  ['maximum_5fbuffer_5fsize_262',['MAXIMUM_BUFFER_SIZE',['../data_8h.html#a3d3fa6d1b6fb27c4cb3ed1c97ba7096b',1,'data.h']]]
 ];
