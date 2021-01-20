@@ -100,6 +100,9 @@ $(document).ready(function(){initNavTree('data_8h.html',''); initResizable(); })
 <div class="title">data.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>This is the data store of all the sensors and general unit settings.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;mbed.h&quot;</code><br />
 </div>
 <p><a href="data_8h_source.html">Go to the source code of this file.</a></p>
@@ -112,23 +115,42 @@ Macros</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:af642eed2320f8e33c207351aff660e28"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="data_8h.html#af642eed2320f8e33c207351aff660e28">adcTemp</a></td></tr>
+<tr class="memdesc:af642eed2320f8e33c207351aff660e28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data store for the internal temperature sensor.  <a href="data_8h.html#af642eed2320f8e33c207351aff660e28">More...</a><br /></td></tr>
 <tr class="separator:af642eed2320f8e33c207351aff660e28"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2503f835df97b492346c3f301ad49235"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="data_8h.html#a2503f835df97b492346c3f301ad49235">lightValue</a> =60.0f</td></tr>
+<tr class="memitem:a2503f835df97b492346c3f301ad49235"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="data_8h.html#a2503f835df97b492346c3f301ad49235">lightValue</a> =49.0f</td></tr>
+<tr class="memdesc:a2503f835df97b492346c3f301ad49235"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data storefor the analog light sensor value in precentage. Defaults to 49% to show a proper value in case sensor isn't working.  <a href="data_8h.html#a2503f835df97b492346c3f301ad49235">More...</a><br /></td></tr>
 <tr class="separator:a2503f835df97b492346c3f301ad49235"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3fdb25bf975daf3ea40949f01f241dbb"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="data_8h.html#a3fdb25bf975daf3ea40949f01f241dbb">thermistorValue</a> = 12.0f</td></tr>
+<tr class="memdesc:a3fdb25bf975daf3ea40949f01f241dbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data store for the external analog temperature sensor in C. Default to 12.0C to show a proper value in case sensor isn't working.  <a href="data_8h.html#a3fdb25bf975daf3ea40949f01f241dbb">More...</a><br /></td></tr>
 <tr class="separator:a3fdb25bf975daf3ea40949f01f241dbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a06941174df16b5837d13590268a7838c"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="data_8h.html#a06941174df16b5837d13590268a7838c">dhtTemp</a> =18.2f</td></tr>
+<tr class="memitem:a06941174df16b5837d13590268a7838c"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="data_8h.html#a06941174df16b5837d13590268a7838c">dhtTemp</a> =23.2f</td></tr>
+<tr class="memdesc:a06941174df16b5837d13590268a7838c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data store for the external <a class="el" href="class_d_h_t.html">DHT</a> temperature sensor in C. Default to 23.2C to show a proper value in case sensor isn't working.  <a href="data_8h.html#a06941174df16b5837d13590268a7838c">More...</a><br /></td></tr>
 <tr class="separator:a06941174df16b5837d13590268a7838c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a1843f4ad3369149b9e12956e0690e0"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="data_8h.html#a5a1843f4ad3369149b9e12956e0690e0">dhtHumid</a> =90.0f</td></tr>
+<tr class="memitem:a5a1843f4ad3369149b9e12956e0690e0"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="data_8h.html#a5a1843f4ad3369149b9e12956e0690e0">dhtHumid</a> =38.0f</td></tr>
+<tr class="memdesc:a5a1843f4ad3369149b9e12956e0690e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data store for the external <a class="el" href="class_d_h_t.html">DHT</a> humidity sensor in precentage. Default to 38% to show a proper value in case sensor isn't working.  <a href="data_8h.html#a5a1843f4ad3369149b9e12956e0690e0">More...</a><br /></td></tr>
 <tr class="separator:a5a1843f4ad3369149b9e12956e0690e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5fd5dc1dff8e0972d65460f68bb1475c"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="data_8h.html#a5fd5dc1dff8e0972d65460f68bb1475c">currentMessage</a> [32] = {0}</td></tr>
+<tr class="memdesc:a5fd5dc1dff8e0972d65460f68bb1475c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data store currently received messages via serial.  <a href="data_8h.html#a5fd5dc1dff8e0972d65460f68bb1475c">More...</a><br /></td></tr>
 <tr class="separator:a5fd5dc1dff8e0972d65460f68bb1475c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4e77c7aea50ce266a5a39bc12481fa62"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="data_8h.html#a4e77c7aea50ce266a5a39bc12481fa62">unitName</a> [32] = &quot;Greenhouse&quot;</td></tr>
+<tr class="memdesc:a4e77c7aea50ce266a5a39bc12481fa62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data store for the unit name. Defaults to Greenhouse in case nothing gets set via serial.  <a href="data_8h.html#a4e77c7aea50ce266a5a39bc12481fa62">More...</a><br /></td></tr>
 <tr class="separator:a4e77c7aea50ce266a5a39bc12481fa62"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abc8027669c883901e6d69c5381e57cdc"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="data_8h.html#abc8027669c883901e6d69c5381e57cdc">unitNumber</a> [32] = &quot;1&quot;</td></tr>
+<tr class="memdesc:abc8027669c883901e6d69c5381e57cdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data store for the unit number. Defaults to 1 in case nothing gets set via serial.  <a href="data_8h.html#abc8027669c883901e6d69c5381e57cdc">More...</a><br /></td></tr>
 <tr class="separator:abc8027669c883901e6d69c5381e57cdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac856407cf3ab7936c279c5650f8d012e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="data_8h.html#ac856407cf3ab7936c279c5650f8d012e">demoMode</a> = false</td></tr>
+<tr class="memdesc:ac856407cf3ab7936c279c5650f8d012e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores if the unit is in demo mode or not. Defaults to false, meaning not in demo mode.  <a href="data_8h.html#ac856407cf3ab7936c279c5650f8d012e">More...</a><br /></td></tr>
+<tr class="separator:ac856407cf3ab7936c279c5650f8d012e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2968006ee16507b92bac505732bc1475"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="data_8h.html#a2968006ee16507b92bac505732bc1475">waterings</a> = 0</td></tr>
+<tr class="memdesc:a2968006ee16507b92bac505732bc1475"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data store for the amount of watering made since the unit started.  <a href="data_8h.html#a2968006ee16507b92bac505732bc1475">More...</a><br /></td></tr>
+<tr class="separator:a2968006ee16507b92bac505732bc1475"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>This is the data store of all the sensors and general unit settings. </p>
+<p>These are just stored in volitile memory, and the sensor data should be stored for history in something like a SD card. And the settings could be stored in EPROM.</p>
+<dl class="section author"><dt>Author</dt><dd>Pjort Pieter Kat </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>11-1-2021 </dd></dl>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a3d3fa6d1b6fb27c4cb3ed1c97ba7096b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3d3fa6d1b6fb27c4cb3ed1c97ba7096b">&#9670;&nbsp;</a></span>MAXIMUM_BUFFER_SIZE</h2>
 
@@ -156,6 +178,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Data store for the internal temperature sensor. </p>
+
 </div>
 </div>
 <a id="a5fd5dc1dff8e0972d65460f68bb1475c"></a>
@@ -170,6 +194,24 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Data store currently received messages via serial. </p>
+
+</div>
+</div>
+<a id="ac856407cf3ab7936c279c5650f8d012e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac856407cf3ab7936c279c5650f8d012e">&#9670;&nbsp;</a></span>demoMode</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int demoMode = false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Stores if the unit is in demo mode or not. Defaults to false, meaning not in demo mode. </p>
+
 </div>
 </div>
 <a id="a5a1843f4ad3369149b9e12956e0690e0"></a>
@@ -179,10 +221,12 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">float dhtHumid =90.0f</td>
+          <td class="memname">float dhtHumid =38.0f</td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Data store for the external <a class="el" href="class_d_h_t.html">DHT</a> humidity sensor in precentage. Default to 38% to show a proper value in case sensor isn't working. </p>
 
 </div>
 </div>
@@ -193,10 +237,12 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">float dhtTemp =18.2f</td>
+          <td class="memname">float dhtTemp =23.2f</td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Data store for the external <a class="el" href="class_d_h_t.html">DHT</a> temperature sensor in C. Default to 23.2C to show a proper value in case sensor isn't working. </p>
 
 </div>
 </div>
@@ -207,10 +253,12 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">float lightValue =60.0f</td>
+          <td class="memname">float lightValue =49.0f</td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Data storefor the analog light sensor value in precentage. Defaults to 49% to show a proper value in case sensor isn't working. </p>
 
 </div>
 </div>
@@ -226,6 +274,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Data store for the external analog temperature sensor in C. Default to 12.0C to show a proper value in case sensor isn't working. </p>
+
 </div>
 </div>
 <a id="a4e77c7aea50ce266a5a39bc12481fa62"></a>
@@ -240,6 +290,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Data store for the unit name. Defaults to Greenhouse in case nothing gets set via serial. </p>
+
 </div>
 </div>
 <a id="abc8027669c883901e6d69c5381e57cdc"></a>
@@ -253,6 +305,24 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Data store for the unit number. Defaults to 1 in case nothing gets set via serial. </p>
+
+</div>
+</div>
+<a id="a2968006ee16507b92bac505732bc1475"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2968006ee16507b92bac505732bc1475">&#9670;&nbsp;</a></span>waterings</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int waterings = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Data store for the amount of watering made since the unit started. </p>
 
 </div>
 </div>

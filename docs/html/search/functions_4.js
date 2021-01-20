@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['main_164',['main',['../main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main.cpp']]],
-  ['millis_165',['millis',['../timers_8h.html#a6ff7f2532a22366f0013bc41397129fd',1,'timers.h']]]
+  ['lcdinit_195',['lcdInit',['../lcd_8h.html#a3004c9c4fb128520f24f4407dca4f8cf',1,'lcd.h']]],
+  ['lightsensor_196',['lightSensor',['../sensors_8h.html#a14659e20082bfaafc621664157b24cf1',1,'sensors.h']]]
 ];

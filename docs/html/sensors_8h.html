@@ -104,50 +104,62 @@ $(document).ready(function(){initNavTree('sensors_8h.html',''); initResizable();
 <div class="textblock"><code>#include &quot;mbed.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="data_8h_source.html">data.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_d_h_t_8h_source.html">DHT.h</a>&quot;</code><br />
-<code>#include &lt;cstdio&gt;</code><br />
 </div>
 <p><a href="sensors_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:a78f316da3a87bf72cb1647786b64bf0e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sensors_8h.html#a78f316da3a87bf72cb1647786b64bf0e">MAX_SAMPLES</a>&#160;&#160;&#160;5</td></tr>
+<tr class="memdesc:a78f316da3a87bf72cb1647786b64bf0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determins how many times between sensor delays that the sensore should be sampled.  <a href="sensors_8h.html#a78f316da3a87bf72cb1647786b64bf0e">More...</a><br /></td></tr>
 <tr class="separator:a78f316da3a87bf72cb1647786b64bf0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:acb3098bd863ac194d20e2ebeabb2cd6d"><td class="memItemLeft" align="right" valign="top">AnalogIn&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sensors_8h.html#acb3098bd863ac194d20e2ebeabb2cd6d">adc_temp</a> (ADC_TEMP)</td></tr>
+<tr class="memdesc:acb3098bd863ac194d20e2ebeabb2cd6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The STM32F746G-DISCO board has a internal analog temperature sensor that needs to be initilized like this.  <a href="sensors_8h.html#acb3098bd863ac194d20e2ebeabb2cd6d">More...</a><br /></td></tr>
 <tr class="separator:acb3098bd863ac194d20e2ebeabb2cd6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a14659e20082bfaafc621664157b24cf1"><td class="memItemLeft" align="right" valign="top">AnalogIn&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sensors_8h.html#a14659e20082bfaafc621664157b24cf1">lightSensor</a> (A0)</td></tr>
+<tr class="memdesc:a14659e20082bfaafc621664157b24cf1"><td class="mdescLeft">&#160;</td><td class="mdescRight">A0 connects to analog light sensor.  <a href="sensors_8h.html#a14659e20082bfaafc621664157b24cf1">More...</a><br /></td></tr>
 <tr class="separator:a14659e20082bfaafc621664157b24cf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad5fb84eb2f699c650113b35aed392451"><td class="memItemLeft" align="right" valign="top">DigitalInOut&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sensors_8h.html#ad5fb84eb2f699c650113b35aed392451">Led1</a> (D3)</td></tr>
-<tr class="separator:ad5fb84eb2f699c650113b35aed392451"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a98faf6f05d68d1ead7f18e27f7b05aae"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_d_h_t.html">DHT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sensors_8h.html#a98faf6f05d68d1ead7f18e27f7b05aae">dht</a> (D4, <a class="el" href="_d_h_t_8h.html#a12f8ec8f0e7a4584b9fe481bb53fa60ea751933a6e30ed5eeefb2c7c7b5e52602">DHT22</a>)</td></tr>
+<tr class="memdesc:a98faf6f05d68d1ead7f18e27f7b05aae"><td class="mdescLeft">&#160;</td><td class="mdescRight">D4 connects to DHT22 temperature and humidity sensor.  <a href="sensors_8h.html#a98faf6f05d68d1ead7f18e27f7b05aae">More...</a><br /></td></tr>
 <tr class="separator:a98faf6f05d68d1ead7f18e27f7b05aae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeed99e5213c95f05fae989ae820c2bb2"><td class="memItemLeft" align="right" valign="top">AnalogIn&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sensors_8h.html#aeed99e5213c95f05fae989ae820c2bb2">thermistor</a> (A1)</td></tr>
+<tr class="memdesc:aeed99e5213c95f05fae989ae820c2bb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">A1 to analog temperature sensor.  <a href="sensors_8h.html#aeed99e5213c95f05fae989ae820c2bb2">More...</a><br /></td></tr>
 <tr class="separator:aeed99e5213c95f05fae989ae820c2bb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa5744d9b06ebc725131e6ec0e3832ceb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sensors_8h.html#aa5744d9b06ebc725131e6ec0e3832ceb">readDHT</a> ()</td></tr>
+<tr class="memdesc:aa5744d9b06ebc725131e6ec0e3832ceb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the <a class="el" href="class_d_h_t.html">DHT</a> and sotres temp and humid into the <a class="el" href="data_8h.html" title="This is the data store of all the sensors and general unit settings.">DATA.h</a> stores.  <a href="sensors_8h.html#aa5744d9b06ebc725131e6ec0e3832ceb">More...</a><br /></td></tr>
 <tr class="separator:aa5744d9b06ebc725131e6ec0e3832ceb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeac8a6c06bed0393b4635b2afc75ae32"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sensors_8h.html#aeac8a6c06bed0393b4635b2afc75ae32">readAdcTemp</a> ()</td></tr>
+<tr class="memdesc:aeac8a6c06bed0393b4635b2afc75ae32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the internal temperature stores it into the <a class="el" href="data_8h.html" title="This is the data store of all the sensors and general unit settings.">DATA.h</a> store.  <a href="sensors_8h.html#aeac8a6c06bed0393b4635b2afc75ae32">More...</a><br /></td></tr>
 <tr class="separator:aeac8a6c06bed0393b4635b2afc75ae32"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5e40481879f259f3fa327b899911eaaf"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sensors_8h.html#a5e40481879f259f3fa327b899911eaaf">readLightSensor</a> ()</td></tr>
+<tr class="memdesc:a5e40481879f259f3fa327b899911eaaf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the float value of the analog read of the light sensor.  <a href="sensors_8h.html#a5e40481879f259f3fa327b899911eaaf">More...</a><br /></td></tr>
 <tr class="separator:a5e40481879f259f3fa327b899911eaaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aecfca85c42c3c4cbb9b1da2400f7242f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sensors_8h.html#aecfca85c42c3c4cbb9b1da2400f7242f">calcLightSensor</a> ()</td></tr>
+<tr class="memdesc:aecfca85c42c3c4cbb9b1da2400f7242f"><td class="mdescLeft">&#160;</td><td class="mdescRight">This calculates the average light sensor values from the amount of samples it managed to make since last read. Then stores it to the <a class="el" href="data_8h.html" title="This is the data store of all the sensors and general unit settings.">Data.h</a> store.  <a href="sensors_8h.html#aecfca85c42c3c4cbb9b1da2400f7242f">More...</a><br /></td></tr>
 <tr class="separator:aecfca85c42c3c4cbb9b1da2400f7242f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c34024ea857afa38156028082cc3834"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sensors_8h.html#a1c34024ea857afa38156028082cc3834">readThermistor</a> ()</td></tr>
+<tr class="memdesc:a1c34024ea857afa38156028082cc3834"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the external analog temperature sensor and stores it in <a class="el" href="data_8h.html" title="This is the data store of all the sensors and general unit settings.">DATA.h</a>.  <a href="sensors_8h.html#a1c34024ea857afa38156028082cc3834">More...</a><br /></td></tr>
 <tr class="separator:a1c34024ea857afa38156028082cc3834"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad40ccf803c2eff76d7e0e7a24c9937ef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sensors_8h.html#ad40ccf803c2eff76d7e0e7a24c9937ef">readSensors</a> ()</td></tr>
+<tr class="memdesc:ad40ccf803c2eff76d7e0e7a24c9937ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">This reads all the sensors and resets the sample array counter.  <a href="sensors_8h.html#ad40ccf803c2eff76d7e0e7a24c9937ef">More...</a><br /></td></tr>
 <tr class="separator:ad40ccf803c2eff76d7e0e7a24c9937ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adf32e8f70bf3f0e6c369dbce696d067f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sensors_8h.html#adf32e8f70bf3f0e6c369dbce696d067f">sensorSampling</a> ()</td></tr>
+<tr class="memdesc:adf32e8f70bf3f0e6c369dbce696d067f"><td class="mdescLeft">&#160;</td><td class="mdescRight">This samples all the sensors. (Currently only the light sensor)  <a href="sensors_8h.html#adf32e8f70bf3f0e6c369dbce696d067f">More...</a><br /></td></tr>
 <tr class="separator:adf32e8f70bf3f0e6c369dbce696d067f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:a00824612ed43173bf1eeb256ae84b24e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sensors_8h.html#a00824612ed43173bf1eeb256ae84b24e">sampI</a> = 0</td></tr>
+<tr class="memdesc:a00824612ed43173bf1eeb256ae84b24e"><td class="mdescLeft">&#160;</td><td class="mdescRight">sampI is used for iterating through the amount of samples in between each sensor read.  <a href="sensors_8h.html#a00824612ed43173bf1eeb256ae84b24e">More...</a><br /></td></tr>
 <tr class="separator:a00824612ed43173bf1eeb256ae84b24e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aead787d4aa456cf58abacad284722429"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sensors_8h.html#aead787d4aa456cf58abacad284722429">light</a> [<a class="el" href="sensors_8h.html#a78f316da3a87bf72cb1647786b64bf0e">MAX_SAMPLES</a>] = {0}</td></tr>
+<tr class="memdesc:aead787d4aa456cf58abacad284722429"><td class="mdescLeft">&#160;</td><td class="mdescRight">Making array for holding light sensor sample data.  <a href="sensors_8h.html#aead787d4aa456cf58abacad284722429">More...</a><br /></td></tr>
 <tr class="separator:aead787d4aa456cf58abacad284722429"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ce68847c12434f60d1b2654a3dc3409"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sensors_8h.html#a6ce68847c12434f60d1b2654a3dc3409">err</a></td></tr>
-<tr class="separator:a6ce68847c12434f60d1b2654a3dc3409"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0f7b9db47a1d81c5925145ca9b34693"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sensors_8h.html#ac0f7b9db47a1d81c5925145ca9b34693">lowLightThreshold</a> =50.0f</td></tr>
+<tr class="memdesc:ac0f7b9db47a1d81c5925145ca9b34693"><td class="mdescLeft">&#160;</td><td class="mdescRight">This controls the threshhold for when the light is considered low.  <a href="sensors_8h.html#ac0f7b9db47a1d81c5925145ca9b34693">More...</a><br /></td></tr>
+<tr class="separator:ac0f7b9db47a1d81c5925145ca9b34693"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a78f316da3a87bf72cb1647786b64bf0e"></a>
@@ -161,6 +173,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Determins how many times between sensor delays that the sensore should be sampled. </p>
 
 </div>
 </div>
@@ -181,6 +195,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>The STM32F746G-DISCO board has a internal analog temperature sensor that needs to be initilized like this. </p>
+
 </div>
 </div>
 <a id="aecfca85c42c3c4cbb9b1da2400f7242f"></a>
@@ -197,6 +213,10 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>This calculates the average light sensor values from the amount of samples it managed to make since last read. Then stores it to the <a class="el" href="data_8h.html" title="This is the data store of all the sensors and general unit settings.">Data.h</a> store. </p>
+<p>Since the code is running in a non-blocking and sort of async way it isn't always know how many samples has been made, therefore it has to go through the samples array and make sure how many holds data. <br  />
+An improvement to this could be to take out the highest and lowest value </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="data_8h.html#a2503f835df97b492346c3f301ad49235" title="Data storefor the analog light sensor value in precentage. Defaults to 49% to show a proper value in ...">lightValue</a> </dd></dl>
 
 </div>
 </div>
@@ -226,23 +246,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="ad5fb84eb2f699c650113b35aed392451"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad5fb84eb2f699c650113b35aed392451">&#9670;&nbsp;</a></span>Led1()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">DigitalInOut Led1 </td>
-          <td>(</td>
-          <td class="paramtype">D3&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p>D4 connects to DHT22 temperature and humidity sensor. </p>
 
 </div>
 </div>
@@ -262,6 +266,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>A0 connects to analog light sensor. </p>
+
 </div>
 </div>
 <a id="aeac8a6c06bed0393b4635b2afc75ae32"></a>
@@ -278,6 +284,9 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Reads the internal temperature stores it into the <a class="el" href="data_8h.html" title="This is the data store of all the sensors and general unit settings.">DATA.h</a> store. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="data_8h.html#af642eed2320f8e33c207351aff660e28" title="Data store for the internal temperature sensor.">adcTemp</a> </dd></dl>
 
 </div>
 </div>
@@ -296,6 +305,11 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Reads the <a class="el" href="class_d_h_t.html">DHT</a> and sotres temp and humid into the <a class="el" href="data_8h.html" title="This is the data store of all the sensors and general unit settings.">DATA.h</a> stores. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="data_8h.html#a06941174df16b5837d13590268a7838c" title="Data store for the external DHT temperature sensor in C. Default to 23.2C to show a proper value in c...">dhtTemp</a> </dd>
+<dd>
+<a class="el" href="data_8h.html#a5a1843f4ad3369149b9e12956e0690e0" title="Data store for the external DHT humidity sensor in precentage. Default to 38% to show a proper value ...">dhtHumid</a> </dd></dl>
+
 </div>
 </div>
 <a id="a5e40481879f259f3fa327b899911eaaf"></a>
@@ -312,6 +326,9 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Return the float value of the analog read of the light sensor. </p>
+<p>For easy it is multiplied with 100 to make it a value between from 100 to 0 instead of 1 to 0. The sensor works best at 5v volts, but the other sensors require 3v3, so I have tried to compensate by dividing with a constant of 0.63 </p>
 
 </div>
 </div>
@@ -330,6 +347,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>This reads all the sensors and resets the sample array counter. </p>
+
 </div>
 </div>
 <a id="a1c34024ea857afa38156028082cc3834"></a>
@@ -347,6 +366,11 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Reads the external analog temperature sensor and stores it in <a class="el" href="data_8h.html" title="This is the data store of all the sensors and general unit settings.">DATA.h</a>. </p>
+<dl class="section warning"><dt>Warning</dt><dd>this sensor needs 3v3 to work with the calculations of resistance. <br  />
+ </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="data_8h.html#a3fdb25bf975daf3ea40949f01f241dbb" title="Data store for the external analog temperature sensor in C. Default to 12.0C to show a proper value i...">thermistorValue</a> </dd></dl>
+
 </div>
 </div>
 <a id="adf32e8f70bf3f0e6c369dbce696d067f"></a>
@@ -363,6 +387,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>This samples all the sensors. (Currently only the light sensor) </p>
 
 </div>
 </div>
@@ -382,23 +408,11 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>A1 to analog temperature sensor. </p>
+
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
-<a id="a6ce68847c12434f60d1b2654a3dc3409"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6ce68847c12434f60d1b2654a3dc3409">&#9670;&nbsp;</a></span>err</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int err</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="aead787d4aa456cf58abacad284722429"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aead787d4aa456cf58abacad284722429">&#9670;&nbsp;</a></span>light</h2>
 
@@ -410,6 +424,26 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Making array for holding light sensor sample data. </p>
+
+</div>
+</div>
+<a id="ac0f7b9db47a1d81c5925145ca9b34693"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0f7b9db47a1d81c5925145ca9b34693">&#9670;&nbsp;</a></span>lowLightThreshold</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float lowLightThreshold =50.0f</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This controls the threshhold for when the light is considered low. </p>
+<p>Defaults to 50. But should probably be messured for different values depending on day/night cycle to make more sense. <br  />
+ </p>
 
 </div>
 </div>
@@ -424,6 +458,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>sampI is used for iterating through the amount of samples in between each sensor read. </p>
 
 </div>
 </div>

@@ -101,10 +101,15 @@ $(document).ready(function(){initNavTree('state_8h.html',''); initResizable(); }
 <div class="title">state.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>This holds all the code concerning the state machine. See runStates for picture.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="timers_8h_source.html">timers.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="data_8h_source.html">data.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="lcd_8h_source.html">lcd.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="sensors_8h_source.html">sensors.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="touch_8h_source.html">touch.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="interupts_8h_source.html">interupts.h</a>&quot;</code><br />
 </div>
 <p><a href="state_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -120,6 +125,7 @@ Enumerations</h2></td></tr>
 , <a class="el" href="state_8h.html#a5d74787dedbc4e11c1ab15bf487e61f8a43d7b53081db0b66a6e9504522e40f9a">INTERUPT</a>
 <br />
  }</td></tr>
+<tr class="memdesc:a5d74787dedbc4e11c1ab15bf487e61f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enums for the different states for the state machine. See runStates for picture.  <a href="state_8h.html#a5d74787dedbc4e11c1ab15bf487e61f8">More...</a><br /></td></tr>
 <tr class="separator:a5d74787dedbc4e11c1ab15bf487e61f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeedb872be664322f745966b8084def0f"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="state_8h.html#aeedb872be664322f745966b8084def0f">StartupInput</a> { <a class="el" href="state_8h.html#aeedb872be664322f745966b8084def0facfe24a7b308a82835c8a9a9a89bc4ca2">NOTHING</a>
 , <a class="el" href="state_8h.html#aeedb872be664322f745966b8084def0fa67bc2ced260a8e43805d2480a785d312">NAME</a>
@@ -130,18 +136,29 @@ Enumerations</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a89ea509d62a6b5088a19cc279eb4f4a6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="state_8h.html#a89ea509d62a6b5088a19cc279eb4f4a6">runStates</a> ()</td></tr>
+<tr class="memdesc:a89ea509d62a6b5088a19cc279eb4f4a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">This get run repeatedly many times a second and is the state machine.  <a href="state_8h.html#a89ea509d62a6b5088a19cc279eb4f4a6">More...</a><br /></td></tr>
 <tr class="separator:a89ea509d62a6b5088a19cc279eb4f4a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:afb1166322b63b2223cf926ca242750e7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="state_8h.html#afb1166322b63b2223cf926ca242750e7">currentState</a> = <a class="el" href="state_8h.html#a5d74787dedbc4e11c1ab15bf487e61f8a56f275913421aac16b5efff541f5dfc4">STARTUP</a></td></tr>
+<tr class="memdesc:afb1166322b63b2223cf926ca242750e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">This holds the current state of the state machine. It defaults to start in STARTUP but can be changed the IDLE to skip the welcome screen.  <a href="state_8h.html#afb1166322b63b2223cf926ca242750e7">More...</a><br /></td></tr>
 <tr class="separator:afb1166322b63b2223cf926ca242750e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac8f09aa5c79e98c5054496eaa3334611"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="state_8h.html#ac8f09aa5c79e98c5054496eaa3334611">currentStartupInput</a> = <a class="el" href="state_8h.html#aeedb872be664322f745966b8084def0facfe24a7b308a82835c8a9a9a89bc4ca2">NOTHING</a></td></tr>
+<tr class="memdesc:ac8f09aa5c79e98c5054496eaa3334611"><td class="mdescLeft">&#160;</td><td class="mdescRight">Controls what type of information is asked for in the serial connection at STARTUP state.  <a href="state_8h.html#ac8f09aa5c79e98c5054496eaa3334611">More...</a><br /></td></tr>
 <tr class="separator:ac8f09aa5c79e98c5054496eaa3334611"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a70e2fa54dbc6254d5a56596c372710a8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="state_8h.html#a70e2fa54dbc6254d5a56596c372710a8">mainScreenDrawn</a> = 0</td></tr>
+<tr class="memdesc:a70e2fa54dbc6254d5a56596c372710a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">This makes sure that the main screen only gets drawn once when entering the IDLE, preventing flickering of the screen.  <a href="state_8h.html#a70e2fa54dbc6254d5a56596c372710a8">More...</a><br /></td></tr>
 <tr class="separator:a70e2fa54dbc6254d5a56596c372710a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>This holds all the code concerning the state machine. See runStates for picture. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="state_8h.html#a89ea509d62a6b5088a19cc279eb4f4a6" title="This get run repeatedly many times a second and is the state machine.">runStates</a> </dd>
+<dd>
+<a class="el" href="state_8h.html#a5d74787dedbc4e11c1ab15bf487e61f8" title="Enums for the different states for the state machine. See runStates for picture.">State</a> </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Pjort Pieter Kat </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>11-1-2021 </dd></dl>
+</div><h2 class="groupheader">Enumeration Type Documentation</h2>
 <a id="aeedb872be664322f745966b8084def0f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aeedb872be664322f745966b8084def0f">&#9670;&nbsp;</a></span>StartupInput</h2>
 
@@ -172,6 +189,9 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Enums for the different states for the state machine. See runStates for picture. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="state_8h.html#a89ea509d62a6b5088a19cc279eb4f4a6" title="This get run repeatedly many times a second and is the state machine.">runStates</a> </dd></dl>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a5d74787dedbc4e11c1ab15bf487e61f8a56f275913421aac16b5efff541f5dfc4"></a>STARTUP&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a5d74787dedbc4e11c1ab15bf487e61f8afd6a0e4343048b10646dd2976cc5ad18"></a>IDLE&#160;</td><td class="fielddoc"></td></tr>
@@ -199,6 +219,17 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>This get run repeatedly many times a second and is the state machine. </p>
+<div class="image">
+<img src="stateMachine.png" alt=""/>
+</div>
+ <p>STARTUP state just shows the welcome screen and askes for unit name and number via serial connection.</p>
+<p>IDLE is where the bulk of the time of the loop with reside. From here it will check if it is time to give the state away to sensors or screen updates etc.</p>
+<p>SAMPLE_SENSOR just runs the sensorSampling and returns the state to IDLE.</p>
+<p>READ_SENSOR reads the sensors and check if watering is needed and forwards the state to UPDATE_SCREEN to draw all the value changes.</p>
+<p>UPDATE_SCREEN just runs screenRefresh and returns the state to IDLE.</p>
+<p>INTERUPT just checks and runs the touch or serial comand that initiated the interupt and then returns state to IDLE</p>
+
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
@@ -214,6 +245,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Controls what type of information is asked for in the serial connection at STARTUP state. </p>
+
 </div>
 </div>
 <a id="afb1166322b63b2223cf926ca242750e7"></a>
@@ -228,6 +261,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>This holds the current state of the state machine. It defaults to start in STARTUP but can be changed the IDLE to skip the welcome screen. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="state_8h.html#a5d74787dedbc4e11c1ab15bf487e61f8" title="Enums for the different states for the state machine. See runStates for picture.">State</a> </dd></dl>
+
 </div>
 </div>
 <a id="a70e2fa54dbc6254d5a56596c372710a8"></a>
@@ -241,6 +277,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>This makes sure that the main screen only gets drawn once when entering the IDLE, preventing flickering of the screen. </p>
 
 </div>
 </div>

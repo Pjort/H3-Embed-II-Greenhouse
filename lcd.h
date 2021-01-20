@@ -1,24 +1,30 @@
+/**
+*   @file lcd.h
+*   @brief This holds all the code concerning LCD display.
+* 
+*   Screen size 480x272
+*   @author Pjort Pieter Kat
+*   @date 11-1-2021
+*/
 #ifndef LCD
 #define LCD
 
 #include "mbed.h"
 #include "data.h"
 #include "timers.h"
-
-//Screen size 480x272
+#include "stm32746g_discovery_lcd.h"
 
 #define LCD_COLOR_SKY_DAY    ((uint32_t)0xFFAAEEFF)
 #define LCD_COLOR_INDOOR_DAY ((uint32_t)0xFFd5f6ff)
-
-#include "stm32746g_discovery_lcd.h"
 
 //declare variables
 int currentMainScreenPage = 0;
 int currentDrawnDayNight = NIGHT;
 int wateringDrawn = false;
 int cloudDrawn = false;
+int demoModeDrawn = false;
 
-//declare methods
+//declare functions
 void drawMainScreenTexts();
 void updateTexts();
 void drawTopMiddleText();
@@ -404,7 +410,6 @@ void drawOutTemp(){
 }
 
 void drawCloud(){
-
     BSP_LCD_SetTextColor(LCD_COLOR_LIGHTGRAY);
     BSP_LCD_FillCircle(397, 46+35, 20);
     BSP_LCD_SetTextColor(LCD_COLOR_BLACK);
@@ -415,7 +420,6 @@ void drawCloud(){
     BSP_LCD_FillCircle(397, 46+35, 14);
 
     cloudDrawn = true;
-    
 }
 
 void removeCloud(){
@@ -433,22 +437,24 @@ void removeCloud(){
 }
 
 void drawDemoMode(){
-    if(currentDrawnDayNight == NIGHT){
-        BSP_LCD_SetTextColor(LCD_COLOR_DARKBLUE);
-    } else {
-        BSP_LCD_SetTextColor(LCD_COLOR_SKY_DAY);
-
-    }
-    BSP_LCD_FillRect(4, 40, 200, 40);
-
-    if (demoMode == true) {
+    if (demoMode == true & demoModeDrawn==false) {
         BSP_LCD_SetFont(&Font24);
         BSP_LCD_SetTextColor(LCD_COLOR_RED);
         BSP_LCD_DisplayStringAt(5, 45, (uint8_t *)"DEMO MODE", LEFT_MODE);
+        demoMode = true;
+
+    }else if(demoMode == true){
+        //Do nothing
+    }else {
+        demoModeDrawn=false;
+        if(currentDrawnDayNight == NIGHT){
+            BSP_LCD_SetTextColor(LCD_COLOR_DARKBLUE);
+        } else {
+            BSP_LCD_SetTextColor(LCD_COLOR_SKY_DAY);
+        }
+        BSP_LCD_FillRect(4, 40, 200, 40);
     }
-
 }
-
 
 
 #endif

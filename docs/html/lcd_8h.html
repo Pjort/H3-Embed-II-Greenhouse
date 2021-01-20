@@ -101,6 +101,9 @@ $(document).ready(function(){initNavTree('lcd_8h.html',''); initResizable(); });
 <div class="title">lcd.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>This holds all the code concerning LCD display.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;mbed.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="data_8h_source.html">data.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="timers_8h_source.html">timers.h</a>&quot;</code><br />
@@ -145,12 +148,24 @@ Functions</h2></td></tr>
 <tr class="separator:a2bffe8781abd007943a0113336fa7282"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afba95866ccd1a39be537269554aac842"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lcd_8h.html#afba95866ccd1a39be537269554aac842">drawOutTemp</a> ()</td></tr>
 <tr class="separator:afba95866ccd1a39be537269554aac842"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab178a5cd1dbc2b121faeb587b9ad2ce2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lcd_8h.html#ab178a5cd1dbc2b121faeb587b9ad2ce2">drawCloud</a> ()</td></tr>
+<tr class="separator:ab178a5cd1dbc2b121faeb587b9ad2ce2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab39ee4168d55358a2e29065b4d6a66c2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lcd_8h.html#ab39ee4168d55358a2e29065b4d6a66c2">removeCloud</a> ()</td></tr>
+<tr class="separator:ab39ee4168d55358a2e29065b4d6a66c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9cefe904474a3b8f0d36282b6e35cfbe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lcd_8h.html#a9cefe904474a3b8f0d36282b6e35cfbe">drawLowLight</a> ()</td></tr>
+<tr class="separator:a9cefe904474a3b8f0d36282b6e35cfbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d46e9c36dee0703246aeceb8e513387"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lcd_8h.html#a3d46e9c36dee0703246aeceb8e513387">drawDemoMode</a> ()</td></tr>
+<tr class="separator:a3d46e9c36dee0703246aeceb8e513387"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3004c9c4fb128520f24f4407dca4f8cf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lcd_8h.html#a3004c9c4fb128520f24f4407dca4f8cf">lcdInit</a> ()</td></tr>
 <tr class="separator:a3004c9c4fb128520f24f4407dca4f8cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4b9805a59b6ba85512f666d60b95bd62"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lcd_8h.html#a4b9805a59b6ba85512f666d60b95bd62">drawStartupScreen</a> ()</td></tr>
 <tr class="separator:a4b9805a59b6ba85512f666d60b95bd62"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a808c0f53e6a1ad304ca947358822805d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lcd_8h.html#a808c0f53e6a1ad304ca947358822805d">drawMainScreen</a> ()</td></tr>
 <tr class="separator:a808c0f53e6a1ad304ca947358822805d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d1ae903b8861ce290de1aefa9dc3545"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lcd_8h.html#a7d1ae903b8861ce290de1aefa9dc3545">drawSun</a> ()</td></tr>
+<tr class="separator:a7d1ae903b8861ce290de1aefa9dc3545"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ef25ec96c9e1523f3f6ac1edd081063"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lcd_8h.html#a2ef25ec96c9e1523f3f6ac1edd081063">drawMoon</a> ()</td></tr>
+<tr class="separator:a2ef25ec96c9e1523f3f6ac1edd081063"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -158,8 +173,12 @@ Variables</h2></td></tr>
 <tr class="separator:a1c510dffb36baa803c377bdfded4101a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac76cdd828639edff49860238e087fa12"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lcd_8h.html#ac76cdd828639edff49860238e087fa12">currentDrawnDayNight</a> = <a class="el" href="timers_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba285422c5a00f46be59fd905a9e255139">NIGHT</a></td></tr>
 <tr class="separator:ac76cdd828639edff49860238e087fa12"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2628566a650b0a470bdb696f883e4a2b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lcd_8h.html#a2628566a650b0a470bdb696f883e4a2b">wateringDrawn</a> = 0</td></tr>
+<tr class="memitem:a2628566a650b0a470bdb696f883e4a2b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lcd_8h.html#a2628566a650b0a470bdb696f883e4a2b">wateringDrawn</a> = false</td></tr>
 <tr class="separator:a2628566a650b0a470bdb696f883e4a2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3b36e8ae671b8919617ea5261ab0c3f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lcd_8h.html#ab3b36e8ae671b8919617ea5261ab0c3f">cloudDrawn</a> = false</td></tr>
+<tr class="separator:ab3b36e8ae671b8919617ea5261ab0c3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc6ffa1c49dc56f70370f513162b3f53"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lcd_8h.html#abc6ffa1c49dc56f70370f513162b3f53">demoModeDrawn</a> = false</td></tr>
+<tr class="separator:abc6ffa1c49dc56f70370f513162b3f53"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a086bcaeca57b4d61e9cfb1424a075f5e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lcd_8h.html#a086bcaeca57b4d61e9cfb1424a075f5e">pixelArtDrop</a> [10][10]</td></tr>
 <tr class="separator:a086bcaeca57b4d61e9cfb1424a075f5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad54aff7f34b98d33963e23aae794b9c4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lcd_8h.html#ad54aff7f34b98d33963e23aae794b9c4">pixelArtWatering</a> [10][10]</td></tr>
@@ -167,7 +186,11 @@ Variables</h2></td></tr>
 <tr class="memitem:a21772ec58c3b63873462dbad36a62829"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lcd_8h.html#a21772ec58c3b63873462dbad36a62829">pixelArtBulb</a> [10][10]</td></tr>
 <tr class="separator:a21772ec58c3b63873462dbad36a62829"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>This holds all the code concerning LCD display. </p>
+<p>Screen size 480x272 </p><dl class="section author"><dt>Author</dt><dd>Pjort Pieter Kat </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>11-1-2021 </dd></dl>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a8965c071d43f6460601e00cdaa94975f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8965c071d43f6460601e00cdaa94975f">&#9670;&nbsp;</a></span>LCD_COLOR_INDOOR_DAY</h2>
 
@@ -231,6 +254,23 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="ab178a5cd1dbc2b121faeb587b9ad2ce2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab178a5cd1dbc2b121faeb587b9ad2ce2">&#9670;&nbsp;</a></span>drawCloud()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void drawCloud </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ad53bdcab299a981a5f4422e13502e8ce"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad53bdcab299a981a5f4422e13502e8ce">&#9670;&nbsp;</a></span>drawDateTime()</h2>
 
@@ -256,6 +296,23 @@ Variables</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">void drawDay </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3d46e9c36dee0703246aeceb8e513387"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d46e9c36dee0703246aeceb8e513387">&#9670;&nbsp;</a></span>drawDemoMode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void drawDemoMode </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -333,6 +390,23 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="a9cefe904474a3b8f0d36282b6e35cfbe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9cefe904474a3b8f0d36282b6e35cfbe">&#9670;&nbsp;</a></span>drawLowLight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void drawLowLight </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a808c0f53e6a1ad304ca947358822805d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a808c0f53e6a1ad304ca947358822805d">&#9670;&nbsp;</a></span>drawMainScreen()</h2>
 
@@ -358,6 +432,23 @@ Variables</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">void drawMainScreenTexts </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2ef25ec96c9e1523f3f6ac1edd081063"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ef25ec96c9e1523f3f6ac1edd081063">&#9670;&nbsp;</a></span>drawMoon()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void drawMoon </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -409,6 +500,23 @@ Variables</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">void drawStartupScreen </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7d1ae903b8861ce290de1aefa9dc3545"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d1ae903b8861ce290de1aefa9dc3545">&#9670;&nbsp;</a></span>drawSun()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void drawSun </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -503,6 +611,23 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="ab39ee4168d55358a2e29065b4d6a66c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab39ee4168d55358a2e29065b4d6a66c2">&#9670;&nbsp;</a></span>removeCloud()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void removeCloud </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a2bffe8781abd007943a0113336fa7282"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2bffe8781abd007943a0113336fa7282">&#9670;&nbsp;</a></span>screenRefresh()</h2>
 
@@ -538,6 +663,20 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
+<a id="ab3b36e8ae671b8919617ea5261ab0c3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3b36e8ae671b8919617ea5261ab0c3f">&#9670;&nbsp;</a></span>cloudDrawn</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int cloudDrawn = false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ac76cdd828639edff49860238e087fa12"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac76cdd828639edff49860238e087fa12">&#9670;&nbsp;</a></span>currentDrawnDayNight</h2>
 
@@ -560,6 +699,20 @@ Variables</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">int currentMainScreenPage = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abc6ffa1c49dc56f70370f513162b3f53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc6ffa1c49dc56f70370f513162b3f53">&#9670;&nbsp;</a></span>demoModeDrawn</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int demoModeDrawn = false</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -651,7 +804,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int wateringDrawn = 0</td>
+          <td class="memname">int wateringDrawn = false</td>
         </tr>
       </table>
 </div><div class="memdoc">

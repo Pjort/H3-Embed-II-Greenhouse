@@ -1,10 +1,11 @@
 /**
 *   @file main.cpp
-*   @brief Test description.
+*   @brief This is the main cpp file of project Case 2 - Greenhouse.
 * 
-*   Lorem Ipsum er ganske enkelt fyldtekst fra print- og typografiindustrien. Lorem Ipsum har været standard fyldtekst siden 1500-tallet, hvor en ukendt trykker sammensatte en tilfældig spalte for at trykke en bog til sammenligning af forskellige skrifttyper. Lorem Ipsum har ikke alene overlevet fem århundreder, men har også vundet indpas i elektronisk typografi uden væsentlige ændringer. Sætningen blev gjordt kendt i 1960'erne med lanceringen af Letraset-ark, som indeholdt afsnit med Lorem Ipsum, og senere med layoutprogrammer som Aldus PageMaker, som også indeholdt en udgave af Lorem Ipsum.
+*   "Case 2 - Greenhouse" is a school project for embeded controller II. It is a prototype of a unit ment to sit in multiple greenhouses monitoring and controlling lighting and watering.
+*   The code is meant to run on a STM32F746G-DISCO with a Grove-starter Kit.
 *   @author Pjort Pieter Kat
-    @date 11-1-2021
+*   @date 11-1-2021
 */
 #include "mbed.h"
 #include "lcd.h"
@@ -16,10 +17,8 @@
 
 
 /**
-*@brief Test description.
+*@brief The main mostly just initializes everthing and then hands it off to the state machine.
 * 
-*Lorem Ipsum er ganske enkelt fyldtekst fra print- og typografiindustrien. Lorem Ipsum har været standard fyldtekst siden 1500-tallet, hvor en ukendt trykker sammensatte en tilfældig spalte for at trykke en bog til sammenligning af forskellige skrifttyper. Lorem Ipsum har ikke alene overlevet fem århundreder, men har også vundet indpas i elektronisk typografi uden væsentlige ændringer. Sætningen blev gjordt kendt i 1960'erne med lanceringen af Letraset-ark, som indeholdt afsnit med Lorem Ipsum, og senere med layoutprogrammer som Aldus PageMaker, som også indeholdt en udgave af Lorem Ipsum.
-*@param a asdasdasd
 */
 int main()
 {
@@ -39,7 +38,7 @@ int main()
 
     printf("All initialized. Press Enter to start. \n");
 
-    while (true) {
+    while (true) {      //Never-endning main loop
 
         runStates();
 

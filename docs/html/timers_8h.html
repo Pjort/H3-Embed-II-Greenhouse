@@ -101,9 +101,14 @@ $(document).ready(function(){initNavTree('timers_8h.html',''); initResizable(); 
 <div class="title">timers.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>This holds all the code concerning timing, date and time. This is also where the magic happens with non-blocking delays.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;mbed.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="serial_com_8h_source.html">serialCom.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="sensors_8h_source.html">sensors.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="touch_8h_source.html">touch.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="data_8h_source.html">data.h</a>&quot;</code><br />
 </div>
 <p><a href="timers_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -117,21 +122,32 @@ Enumerations</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a6ff7f2532a22366f0013bc41397129fd"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timers_8h.html#a6ff7f2532a22366f0013bc41397129fd">millis</a> ()</td></tr>
+<tr class="memdesc:a6ff7f2532a22366f0013bc41397129fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">My implementation of a "Arudino" millis function for non-blocking.  <a href="timers_8h.html#a6ff7f2532a22366f0013bc41397129fd">More...</a><br /></td></tr>
 <tr class="separator:a6ff7f2532a22366f0013bc41397129fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1da93f785d42910a1e8523d2921bcb0a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timers_8h.html#a1da93f785d42910a1e8523d2921bcb0a">checkDayOrNight</a> ()</td></tr>
+<tr class="memdesc:a1da93f785d42910a1e8523d2921bcb0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determains if it is day or night from RTC and sets currentDayNightCycle accordingly.  <a href="timers_8h.html#a1da93f785d42910a1e8523d2921bcb0a">More...</a><br /></td></tr>
 <tr class="separator:a1da93f785d42910a1e8523d2921bcb0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a25190c9a289daabac4718fd21ce18ba9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timers_8h.html#a25190c9a289daabac4718fd21ce18ba9">timersInit</a> ()</td></tr>
+<tr class="memdesc:a25190c9a289daabac4718fd21ce18ba9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inits the RTC clock.  <a href="timers_8h.html#a25190c9a289daabac4718fd21ce18ba9">More...</a><br /></td></tr>
 <tr class="separator:a25190c9a289daabac4718fd21ce18ba9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a01398cafad2add638ff54b4159164b6f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timers_8h.html#a01398cafad2add638ff54b4159164b6f">secondTimer</a> ()</td></tr>
+<tr class="memdesc:a01398cafad2add638ff54b4159164b6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns 1 if a second has passed since last time it was called.  <a href="timers_8h.html#a01398cafad2add638ff54b4159164b6f">More...</a><br /></td></tr>
 <tr class="separator:a01398cafad2add638ff54b4159164b6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5ea54798569c065cd8d03d414a1fb856"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timers_8h.html#a5ea54798569c065cd8d03d414a1fb856">sensorSampleTimer</a> ()</td></tr>
+<tr class="memdesc:a5ea54798569c065cd8d03d414a1fb856"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns 1 if it is time to run sample the sensors.  <a href="timers_8h.html#a5ea54798569c065cd8d03d414a1fb856">More...</a><br /></td></tr>
 <tr class="separator:a5ea54798569c065cd8d03d414a1fb856"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a02e6b0293a465f892b7e2502c806638c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timers_8h.html#a02e6b0293a465f892b7e2502c806638c">sensorReadTimer</a> ()</td></tr>
+<tr class="memdesc:a02e6b0293a465f892b7e2502c806638c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns 1 if it is time to run read the sensors.  <a href="timers_8h.html#a02e6b0293a465f892b7e2502c806638c">More...</a><br /></td></tr>
 <tr class="separator:a02e6b0293a465f892b7e2502c806638c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0a8a7f11025dc89c9bf618931f311932"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timers_8h.html#a0a8a7f11025dc89c9bf618931f311932">checkWatering</a> ()</td></tr>
+<tr class="memdesc:a0a8a7f11025dc89c9bf618931f311932"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check and starts/stops the watering if it is time.  <a href="timers_8h.html#a0a8a7f11025dc89c9bf618931f311932">More...</a><br /></td></tr>
 <tr class="separator:a0a8a7f11025dc89c9bf618931f311932"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abee7dff58142373ebdbe2f27ef669e75"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timers_8h.html#abee7dff58142373ebdbe2f27ef669e75">serialTimer</a> ()</td></tr>
+<tr class="memdesc:abee7dff58142373ebdbe2f27ef669e75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks serial and touch at certain intervals set by serialReadDelay.  <a href="timers_8h.html#abee7dff58142373ebdbe2f27ef669e75">More...</a><br /></td></tr>
 <tr class="separator:abee7dff58142373ebdbe2f27ef669e75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9a62876e7691f3f145e880816194ddd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timers_8h.html#aa9a62876e7691f3f145e880816194ddd">addHoursToRTC</a> (int hours)</td></tr>
+<tr class="memdesc:aa9a62876e7691f3f145e880816194ddd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds or subtracts X hour(s) from the RTC.  <a href="timers_8h.html#aa9a62876e7691f3f145e880816194ddd">More...</a><br /></td></tr>
+<tr class="separator:aa9a62876e7691f3f145e880816194ddd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -139,7 +155,7 @@ Variables</h2></td></tr>
 <tr class="separator:ab176b014f421fc2233a4b75304bb7307"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a01e29875b621810d564a26de8fc24d5e"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timers_8h.html#a01e29875b621810d564a26de8fc24d5e">lastSecond</a> = 0</td></tr>
 <tr class="separator:a01e29875b621810d564a26de8fc24d5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3bb2300ecd1d73afbf531a74c64520d3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timers_8h.html#a3bb2300ecd1d73afbf531a74c64520d3">serialReadDelay</a> = 100</td></tr>
+<tr class="memitem:a3bb2300ecd1d73afbf531a74c64520d3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timers_8h.html#a3bb2300ecd1d73afbf531a74c64520d3">serialReadDelay</a> = 150</td></tr>
 <tr class="separator:a3bb2300ecd1d73afbf531a74c64520d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af3cbabadb07332fcbeda733a400968d9"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timers_8h.html#af3cbabadb07332fcbeda733a400968d9">lastSerialRead</a> = 0</td></tr>
 <tr class="separator:af3cbabadb07332fcbeda733a400968d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -149,8 +165,6 @@ Variables</h2></td></tr>
 <tr class="separator:a04a2f0b6f9e00706e9d6b9b21a6d3ac3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1dd578490b3907934f5fd7e3a345614b"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timers_8h.html#a1dd578490b3907934f5fd7e3a345614b">lastSensorRead</a> = 0</td></tr>
 <tr class="separator:a1dd578490b3907934f5fd7e3a345614b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2968006ee16507b92bac505732bc1475"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timers_8h.html#a2968006ee16507b92bac505732bc1475">waterings</a> = 0</td></tr>
-<tr class="separator:a2968006ee16507b92bac505732bc1475"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a349696ee434fccb0ded3488a6156ad77"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timers_8h.html#a349696ee434fccb0ded3488a6156ad77">wateringActive</a> = 0</td></tr>
 <tr class="separator:a349696ee434fccb0ded3488a6156ad77"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a806d1f2cfadf5f4e2069217dbb3a1be5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timers_8h.html#a806d1f2cfadf5f4e2069217dbb3a1be5">wateringDelay</a> = 600000</td></tr>
@@ -161,8 +175,16 @@ Variables</h2></td></tr>
 <tr class="separator:a56731e6f5d44a47e995a56d4558e2763"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a16e07dc09d95b2fc61994288f52661ad"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timers_8h.html#a16e07dc09d95b2fc61994288f52661ad">currentDayNightCycle</a> = <a class="el" href="timers_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba8e85ce474d6e6c5ef5b03a415dee454a">DAY</a></td></tr>
 <tr class="separator:a16e07dc09d95b2fc61994288f52661ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7283b34c71004726281845d4cabe8c7c"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timers_8h.html#a7283b34c71004726281845d4cabe8c7c">lastMillis</a> =0</td></tr>
+<tr class="separator:a7283b34c71004726281845d4cabe8c7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae3e53567b1a4a6189a019d7f0162dcc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timers_8h.html#aae3e53567b1a4a6189a019d7f0162dcc">resetCount</a> = 0</td></tr>
+<tr class="separator:aae3e53567b1a4a6189a019d7f0162dcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>This holds all the code concerning timing, date and time. This is also where the magic happens with non-blocking delays. </p>
+<dl class="section author"><dt>Author</dt><dd>Pjort Pieter Kat </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>11-1-2021 </dd></dl>
+</div><h2 class="groupheader">Enumeration Type Documentation</h2>
 <a id="a06fc87d81c62e9abb8790b6e5713c55b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a06fc87d81c62e9abb8790b6e5713c55b">&#9670;&nbsp;</a></span>anonymous enum</h2>
 
@@ -182,6 +204,32 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="aa9a62876e7691f3f145e880816194ddd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9a62876e7691f3f145e880816194ddd">&#9670;&nbsp;</a></span>addHoursToRTC()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void addHoursToRTC </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>hours</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Adds or subtracts X hour(s) from the RTC. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">hours</td><td>amount of hours to add or subtract. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a1da93f785d42910a1e8523d2921bcb0a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1da93f785d42910a1e8523d2921bcb0a">&#9670;&nbsp;</a></span>checkDayOrNight()</h2>
 
@@ -196,6 +244,10 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Determains if it is day or night from RTC and sets currentDayNightCycle accordingly. </p>
+<p>This is done by taking the UNIX time now then subtracting 6 hours (21600 seconds) then dividing this by 12 hours. <br  />
+ This should get a even or odd number depending if it is day or night. Then modulus is used to find if it is odd or even. </p>
 
 </div>
 </div>
@@ -214,6 +266,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Check and starts/stops the watering if it is time. </p>
+
 </div>
 </div>
 <a id="a6ff7f2532a22366f0013bc41397129fd"></a>
@@ -230,6 +284,9 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>My implementation of a "Arudino" millis function for non-blocking. </p>
+<p>The us_ticker_read used for this is a unsigned long and therefore resets after about 71min since it can only hold 4294967295us, therefore I had to make a reset counter. </p>
 
 </div>
 </div>
@@ -248,6 +305,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Returns 1 if a second has passed since last time it was called. </p>
+
 </div>
 </div>
 <a id="a02e6b0293a465f892b7e2502c806638c"></a>
@@ -264,6 +323,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Returns 1 if it is time to run read the sensors. </p>
 
 </div>
 </div>
@@ -282,6 +343,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Returns 1 if it is time to run sample the sensors. </p>
+
 </div>
 </div>
 <a id="abee7dff58142373ebdbe2f27ef669e75"></a>
@@ -298,6 +361,9 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Checks serial and touch at certain intervals set by serialReadDelay. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="timers_8h.html#a3bb2300ecd1d73afbf531a74c64520d3">serialReadDelay</a> </dd></dl>
 
 </div>
 </div>
@@ -316,6 +382,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Inits the RTC clock. </p>
+
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
@@ -327,6 +395,20 @@ Variables</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">int currentDayNightCycle = <a class="el" href="timers_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba8e85ce474d6e6c5ef5b03a415dee454a">DAY</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7283b34c71004726281845d4cabe8c7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7283b34c71004726281845d4cabe8c7c">&#9670;&nbsp;</a></span>lastMillis</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned long lastMillis =0</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -403,6 +485,20 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="aae3e53567b1a4a6189a019d7f0162dcc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae3e53567b1a4a6189a019d7f0162dcc">&#9670;&nbsp;</a></span>resetCount</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int resetCount = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ab176b014f421fc2233a4b75304bb7307"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab176b014f421fc2233a4b75304bb7307">&#9670;&nbsp;</a></span>secondTimerDelay</h2>
 
@@ -438,7 +534,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int serialReadDelay = 100</td>
+          <td class="memname">int serialReadDelay = 150</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -481,20 +577,6 @@ Variables</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">int wateringDelay = 600000</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a2968006ee16507b92bac505732bc1475"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2968006ee16507b92bac505732bc1475">&#9670;&nbsp;</a></span>waterings</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int waterings = 0</td>
         </tr>
       </table>
 </div><div class="memdoc">

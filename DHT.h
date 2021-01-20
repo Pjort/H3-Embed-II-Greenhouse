@@ -1,6 +1,7 @@
-/* 
- *  DHT Library for  Digital-output Humidity and Temperature sensors 
- *  
+/**
+ *@file DHT.h
+ *@brief DHT Library for Digital-output Humidity and Temperature sensors
+ *
  *  Works with DHT11, DHT21, DHT22
  *             SEN11301P,  Grove - Temperature&Humidity Sensor     (Seeed Studio)
  *             SEN51035P,  Grove - Temperature&Humidity Sensor Pro (Seeed Studio)
@@ -28,6 +29,10 @@
  * LIABILITY WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
+ *
+ *@author Wim De Roeve
+ *@note Tried to be modified to work with mbed os 6.
+ *@warning Doesn't seem to work great with mbed os 6.
  */
  
 #ifndef MBED_DHT_H

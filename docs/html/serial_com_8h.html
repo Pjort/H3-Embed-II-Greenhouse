@@ -100,29 +100,40 @@ $(document).ready(function(){initNavTree('serial_com_8h.html',''); initResizable
 <div class="title">serialCom.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>This holds all the code concerning serial comunication.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;mbed.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="data_8h_source.html">data.h</a>&quot;</code><br />
-<code>#include &lt;cstdio&gt;</code><br />
 </div>
 <p><a href="serial_com_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ae9a165b0757884687a51a58b1380b5d5"><td class="memItemLeft" align="right" valign="top">static BufferedSerial&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="serial_com_8h.html#ae9a165b0757884687a51a58b1380b5d5">serial_port</a> (USBTX, USBRX)</td></tr>
+<tr class="memdesc:ae9a165b0757884687a51a58b1380b5d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a serialBufferedSerial object to the USB port.  <a href="serial_com_8h.html#ae9a165b0757884687a51a58b1380b5d5">More...</a><br /></td></tr>
 <tr class="separator:ae9a165b0757884687a51a58b1380b5d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0d3e8fbbc0afbc066f55916ee18a2208"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="serial_com_8h.html#a0d3e8fbbc0afbc066f55916ee18a2208">serialInit</a> ()</td></tr>
+<tr class="memdesc:a0d3e8fbbc0afbc066f55916ee18a2208"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the serial connection properties, making sure it isn't blocking.  <a href="serial_com_8h.html#a0d3e8fbbc0afbc066f55916ee18a2208">More...</a><br /></td></tr>
 <tr class="separator:a0d3e8fbbc0afbc066f55916ee18a2208"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a01e70b3bcd05f11f565e5f6eb0e3cb41"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="serial_com_8h.html#a01e70b3bcd05f11f565e5f6eb0e3cb41">serialRead</a> ()</td></tr>
+<tr class="memdesc:a01e70b3bcd05f11f565e5f6eb0e3cb41"><td class="mdescLeft">&#160;</td><td class="mdescRight">My attempt to make a serial read that isn't blocking and is getting called many times a second and making sure that it stores chars untill CR is hit.  <a href="serial_com_8h.html#a01e70b3bcd05f11f565e5f6eb0e3cb41">More...</a><br /></td></tr>
 <tr class="separator:a01e70b3bcd05f11f565e5f6eb0e3cb41"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:ac30d6d290cc4320e371bc89f7da1e00b"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="serial_com_8h.html#ac30d6d290cc4320e371bc89f7da1e00b">serialBuf</a> [<a class="el" href="data_8h.html#a3d3fa6d1b6fb27c4cb3ed1c97ba7096b">MAXIMUM_BUFFER_SIZE</a>] = {0}</td></tr>
+<tr class="memdesc:ac30d6d290cc4320e371bc89f7da1e00b"><td class="mdescLeft">&#160;</td><td class="mdescRight">SerialBuffer to receive the data.  <a href="serial_com_8h.html#ac30d6d290cc4320e371bc89f7da1e00b">More...</a><br /></td></tr>
 <tr class="separator:ac30d6d290cc4320e371bc89f7da1e00b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aab23cd5ff72251c1117de163a76110c5"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="serial_com_8h.html#aab23cd5ff72251c1117de163a76110c5">storedBuf</a> [<a class="el" href="data_8h.html#a3d3fa6d1b6fb27c4cb3ed1c97ba7096b">MAXIMUM_BUFFER_SIZE</a>] = {0}</td></tr>
+<tr class="memdesc:aab23cd5ff72251c1117de163a76110c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">storedBuf to store received the data.  <a href="serial_com_8h.html#aab23cd5ff72251c1117de163a76110c5">More...</a><br /></td></tr>
 <tr class="separator:aab23cd5ff72251c1117de163a76110c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>This holds all the code concerning serial comunication. </p>
+<dl class="section author"><dt>Author</dt><dd>Pjort Pieter Kat </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>11-1-2021 </dd></dl>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a id="ae9a165b0757884687a51a58b1380b5d5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae9a165b0757884687a51a58b1380b5d5">&#9670;&nbsp;</a></span>serial_port()</h2>
 
@@ -157,6 +168,8 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Create a serialBufferedSerial object to the USB port. </p>
+
 </div>
 </div>
 <a id="a0d3e8fbbc0afbc066f55916ee18a2208"></a>
@@ -173,6 +186,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Initialize the serial connection properties, making sure it isn't blocking. </p>
 
 </div>
 </div>
@@ -191,6 +206,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>My attempt to make a serial read that isn't blocking and is getting called many times a second and making sure that it stores chars untill CR is hit. </p>
+
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
@@ -206,6 +223,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>SerialBuffer to receive the data. </p>
+
 </div>
 </div>
 <a id="aab23cd5ff72251c1117de163a76110c5"></a>
@@ -219,6 +238,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>storedBuf to store received the data. </p>
 
 </div>
 </div>

@@ -4,7 +4,6 @@ var sensors_8h =
     [ "adc_temp", "sensors_8h.html#acb3098bd863ac194d20e2ebeabb2cd6d", null ],
     [ "calcLightSensor", "sensors_8h.html#aecfca85c42c3c4cbb9b1da2400f7242f", null ],
     [ "dht", "sensors_8h.html#a98faf6f05d68d1ead7f18e27f7b05aae", null ],
-    [ "Led1", "sensors_8h.html#ad5fb84eb2f699c650113b35aed392451", null ],
     [ "lightSensor", "sensors_8h.html#a14659e20082bfaafc621664157b24cf1", null ],
     [ "readAdcTemp", "sensors_8h.html#aeac8a6c06bed0393b4635b2afc75ae32", null ],
     [ "readDHT", "sensors_8h.html#aa5744d9b06ebc725131e6ec0e3832ceb", null ],
@@ -13,7 +12,7 @@ var sensors_8h =
     [ "readThermistor", "sensors_8h.html#a1c34024ea857afa38156028082cc3834", null ],
     [ "sensorSampling", "sensors_8h.html#adf32e8f70bf3f0e6c369dbce696d067f", null ],
     [ "thermistor", "sensors_8h.html#aeed99e5213c95f05fae989ae820c2bb2", null ],
-    [ "err", "sensors_8h.html#a6ce68847c12434f60d1b2654a3dc3409", null ],
     [ "light", "sensors_8h.html#aead787d4aa456cf58abacad284722429", null ],
+    [ "lowLightThreshold", "sensors_8h.html#ac0f7b9db47a1d81c5925145ca9b34693", null ],
     [ "sampI", "sensors_8h.html#a00824612ed43173bf1eeb256ae84b24e", null ]
 ];
