@@ -27,8 +27,16 @@ time_t timeNow;
 enum {NIGHT,DAY};
 int currentDayNightCycle = DAY;
 
+unsigned long lastMillis=0;
+int resetCount = 0;
+
 unsigned long millis(){
-    return (us_ticker_read() / 1000L);
+    unsigned long currentMillis = (us_ticker_read() / 1000L);
+    if (currentMillis<lastMillis){                  //us_ticker_read is a unsigned long and therefore resets after about 71min since it can only hold 4294967295us
+        resetCount++;
+    }
+    lastMillis=currentMillis;
+    return currentMillis+(4294967*resetCount);
 }
 
 void checkDayOrNight(){
@@ -44,6 +52,7 @@ void timersInit(){
     set_time(1611079160); // 19/01/2021 @ 17:59:20 (UTC)
     timeNow = time(NULL);
     checkDayOrNight();
+    lastMillis = millis();
 
 }
 
