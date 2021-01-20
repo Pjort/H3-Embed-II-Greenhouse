@@ -31,4 +31,22 @@ void getTouch(){
 
 
 
+int checkTouchButton(){
+    //Left button
+    if((x >= 5 && x <= 45) & (y >= 210 && y <= 250)) {
+        return -1;
+    }
+    //Right button
+    else if((x >= BSP_LCD_GetXSize()-45 && x <= BSP_LCD_GetXSize()-5) & (y >= 210 && y <= 250)) {
+        return 1;
+    } 
+    //Press on date and time
+    else if ((x >= 0 && x <= 100) & (y >= 0 && y <= 38)) {
+        return 2;
+    }
+
+    return 0;
+}
+
+
 #endif

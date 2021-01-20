@@ -19,5 +19,7 @@ char currentMessage[32] = {0};
 char unitName[32] = "Greenhouse";
 char unitNumber[32] = "1";
 
+int demoMode = false;
+
 
 #endif

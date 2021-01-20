@@ -36,6 +36,7 @@ void drawOutTemp();
 void drawCloud();
 void removeCloud();
 void drawLowLight();
+void drawDemoMode();
 
 void lcdInit(){
     BSP_LCD_Init();
@@ -116,6 +117,21 @@ void drawMainScreen(){
     BSP_LCD_SetTextColor(LCD_COLOR_BLACK);
     BSP_LCD_DrawRect (BSP_LCD_GetXSize()/2+125, 130, 110, 66);
 
+    //Draw left button
+    BSP_LCD_SetTextColor(LCD_COLOR_WHITE);
+    BSP_LCD_FillRect (5, 210, 40, 40);
+    BSP_LCD_SetTextColor(LCD_COLOR_BLACK);
+    BSP_LCD_DrawRect (5, 210, 40, 40);
+    BSP_LCD_SetFont(&Font24);
+    BSP_LCD_DisplayStringAt(5+10, 210+10, (uint8_t *)"<", LEFT_MODE);
+
+    //Draw right button
+    BSP_LCD_SetTextColor(LCD_COLOR_WHITE);
+    BSP_LCD_FillRect (BSP_LCD_GetXSize()-45, 210, 40, 40);
+    BSP_LCD_SetTextColor(LCD_COLOR_BLACK);
+    BSP_LCD_DrawRect (BSP_LCD_GetXSize()-45, 210, 40, 40);
+    BSP_LCD_DisplayStringAt(BSP_LCD_GetXSize()-45+15, 210+10, (uint8_t *)">", LEFT_MODE);
+
     drawLowLight();
 
     drawMainScreenTexts();
@@ -152,6 +168,9 @@ void drawMainScreenTexts(){
     //House text
     drawHouseText();
 
+    //Draw demo mode
+    drawDemoMode();
+
 }
 
 void screenRefresh(){
@@ -160,6 +179,7 @@ void screenRefresh(){
     drawHouseText();
     drawOutTemp();
     drawLowLight();
+    drawDemoMode();
     
 
     if(currentDrawnDayNight == DAY && currentDayNightCycle == NIGHT){
@@ -410,6 +430,23 @@ void removeCloud(){
     }
 
     cloudDrawn = false;
+}
+
+void drawDemoMode(){
+    if(currentDrawnDayNight == NIGHT){
+        BSP_LCD_SetTextColor(LCD_COLOR_DARKBLUE);
+    } else {
+        BSP_LCD_SetTextColor(LCD_COLOR_SKY_DAY);
+
+    }
+    BSP_LCD_FillRect(4, 40, 200, 40);
+
+    if (demoMode == true) {
+        BSP_LCD_SetFont(&Font24);
+        BSP_LCD_SetTextColor(LCD_COLOR_RED);
+        BSP_LCD_DisplayStringAt(5, 45, (uint8_t *)"DEMO MODE", LEFT_MODE);
+    }
+
 }
 
 

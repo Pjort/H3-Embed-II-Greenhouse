@@ -5,6 +5,7 @@
 #include "lcd.h"
 #include "sensors.h"
 #include "touch.h"
+#include "interupts.h"
 
 
 enum State {STARTUP, IDLE, SAMPLE_SENSOR, READ_SENSOR, UPDATE_SCREEN, INTERUPT};
@@ -16,6 +17,8 @@ int currentState = STARTUP;
 int currentStartupInput = NOTHING;
 
 int mainScreenDrawn = 0;
+
+void toggleDemoMode();
 
 void runStates(){
     serialTimer();
@@ -71,6 +74,9 @@ void runStates(){
             if(newTouch){
                 currentState = INTERUPT;
             }
+            if(currentMessage[0]!=0){
+                currentState = INTERUPT;
+            }
 
             if (sensorReadTimer()){
                 currentState = READ_SENSOR;
@@ -100,8 +106,24 @@ void runStates(){
             break;
         case INTERUPT:
             if(newTouch){
+                int buttonReturn = checkTouchButton();
+                if(buttonReturn==2){
+                    toggleDemoMode();
+                }
+                else if(buttonReturn!=0){
+                    if(demoMode){
+                        addHoursToRTC(buttonReturn);
+                        screenRefresh();
+                    }
+
+                }
+                
                 newTouch = false;
             }
+            if (currentMessage[0]!=0) {
+                newSerialComand();
+            }
+
             currentState = IDLE;
             break;
     }

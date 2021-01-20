@@ -9,7 +9,7 @@
 int secondTimerDelay = 1000; //Delay in MS
 unsigned long lastSecond = 0;
 
-int serialReadDelay = 50; //Delay in MS
+int serialReadDelay = 150; //Delay in MS
 unsigned long lastSerialRead = 0;
 
 unsigned long lastSensorSample = 0;
@@ -107,11 +107,16 @@ void serialTimer(){
     if (millis() >= lastSerialRead + serialReadDelay){
         lastSerialRead = millis();
         timeNow = time(NULL);
-        serialRead();
-        getTouch();
+        serialRead();       //Read serial data
+        getTouch();         //Get touchscreen data
 
     }   
 }
 
+void addHoursToRTC(int hours){
+    int unixSeconds = time(NULL);
+    unixSeconds = unixSeconds + (3600 *hours);
+    set_time(unixSeconds);
+}
 
 #endif
