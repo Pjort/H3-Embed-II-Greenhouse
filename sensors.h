@@ -15,6 +15,7 @@ AnalogIn thermistor(A1);
 
 int sampI = 0;
 float light[MAX_SAMPLES] = {0};
+float lowLightThreshold=50.0f;
 
 int err;
 

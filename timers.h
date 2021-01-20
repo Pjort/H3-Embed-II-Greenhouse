@@ -4,11 +4,12 @@
 #include "mbed.h"
 #include "serialCom.h"
 #include "sensors.h"
+#include "touch.h"
 
 int secondTimerDelay = 1000; //Delay in MS
 unsigned long lastSecond = 0;
 
-int serialReadDelay = 100; //Delay in MS
+int serialReadDelay = 50; //Delay in MS
 unsigned long lastSerialRead = 0;
 
 unsigned long lastSensorSample = 0;
@@ -98,6 +99,7 @@ void serialTimer(){
         lastSerialRead = millis();
         timeNow = time(NULL);
         serialRead();
+        getTouch();
 
     }   
 }

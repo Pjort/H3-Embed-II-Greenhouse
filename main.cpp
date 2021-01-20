@@ -12,6 +12,7 @@
 #include "serialCom.h"
 #include "sensors.h"
 #include "state.h"
+#include "touch.h"
 
 
 /**
@@ -25,6 +26,8 @@ int main()
     printf("STARTING UP! \n");
 
     lcdInit();
+
+    touchInit();
 
     serialInit();
 

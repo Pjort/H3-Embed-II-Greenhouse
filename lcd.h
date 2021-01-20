@@ -15,7 +15,8 @@
 //declare variables
 int currentMainScreenPage = 0;
 int currentDrawnDayNight = NIGHT;
-int wateringDrawn = 0;
+int wateringDrawn = false;
+int cloudDrawn = false;
 
 //declare methods
 void drawMainScreenTexts();
@@ -33,6 +34,8 @@ void drawHouseText();
 void screenRefresh();
 void drawOutTemp();
 void drawCloud();
+void removeCloud();
+void drawLowLight();
 
 void lcdInit(){
     BSP_LCD_Init();
@@ -49,9 +52,18 @@ void drawStartupScreen(){
     BSP_LCD_Clear(LCD_COLOR_WHITE);
 
     BSP_LCD_SetTextColor(LCD_COLOR_BLACK);
-    BSP_LCD_SetFont(&Font16);
 
+    //Welcome message
+    BSP_LCD_SetFont(&Font24);
+    BSP_LCD_DisplayStringAt(0, BSP_LCD_GetYSize()/2-100, (uint8_t *)"Welcome", CENTER_MODE);
+
+    //Write serial instructions
+    BSP_LCD_SetFont(&Font16);
     BSP_LCD_DisplayStringAt(0, BSP_LCD_GetYSize()/2, (uint8_t *)"Connect via serial and follow instructions", CENTER_MODE);
+
+    //Skip instructions
+    BSP_LCD_SetFont(&Font12);
+    BSP_LCD_DisplayStringAt(0, BSP_LCD_GetYSize()/2+90, (uint8_t *)"Press anywhere to skip, and use default value", CENTER_MODE);
 }
 
 void drawMainScreen(){
@@ -104,7 +116,7 @@ void drawMainScreen(){
     BSP_LCD_SetTextColor(LCD_COLOR_BLACK);
     BSP_LCD_DrawRect (BSP_LCD_GetXSize()/2+125, 130, 110, 66);
 
-    drawBulb(BSP_LCD_GetXSize()/2-15,90,3);
+    drawLowLight();
 
     drawMainScreenTexts();
 
@@ -140,8 +152,6 @@ void drawMainScreenTexts(){
     //House text
     drawHouseText();
 
-    drawCloud();
-
 }
 
 void screenRefresh(){
@@ -149,7 +159,8 @@ void screenRefresh(){
     drawLightValue();
     drawHouseText();
     drawOutTemp();
-    drawBulb(BSP_LCD_GetXSize()/2-15,90,3);
+    drawLowLight();
+    
 
     if(currentDrawnDayNight == DAY && currentDayNightCycle == NIGHT){
         drawMainScreen();
@@ -261,7 +272,7 @@ void drawWatering(int xOffset,int yOffset, int scale){
 }
 
 void drawBulb(int xOffset,int yOffset, int scale){
-    if (currentDayNightCycle==DAY & lightValue<50.0f) {
+    if (currentDayNightCycle==DAY & lightValue<lowLightThreshold) {
         BSP_LCD_SetTextColor(LCD_COLOR_YELLOW);
     }else{
         BSP_LCD_SetTextColor(LCD_COLOR_BLACK);
@@ -276,15 +287,29 @@ void drawBulb(int xOffset,int yOffset, int scale){
     }
 }
 
-void drawDay(){
-    //Draw day background
-    BSP_LCD_Clear(LCD_COLOR_SKY_DAY);
+void drawLowLight(){
+    drawBulb(BSP_LCD_GetXSize()/2-15,90,3);
+    if (lightValue<lowLightThreshold & cloudDrawn==false) {
+        drawCloud();
+    } else if(lightValue>=lowLightThreshold & cloudDrawn==true){
+        removeCloud();
+    }
+}
 
+void drawSun(){
     //Draw sun
     BSP_LCD_SetTextColor(LCD_COLOR_YELLOW);
     BSP_LCD_FillCircle(390+28, 46+28, 28);
     BSP_LCD_SetTextColor(LCD_COLOR_BLACK);
     BSP_LCD_DrawCircle(390+28, 46+28, 28);
+}
+
+void drawDay(){
+    //Draw day background
+    BSP_LCD_Clear(LCD_COLOR_SKY_DAY);
+
+    //Draw sun
+    drawSun();
 
     //Draw day grass bottom
     BSP_LCD_SetTextColor(LCD_COLOR_GREEN);
@@ -293,11 +318,7 @@ void drawDay(){
     BSP_LCD_DrawHLine (0,BSP_LCD_GetYSize()-16,BSP_LCD_GetXSize());
 }
 
-void drawNight(){
-    //Draw night background
-    BSP_LCD_Clear(LCD_COLOR_DARKBLUE);
-
-    //Draw moon
+void drawMoon(){
     BSP_LCD_SetTextColor(LCD_COLOR_YELLOW);
     BSP_LCD_FillCircle(390+28, 46+28, 28);
     BSP_LCD_SetTextColor(LCD_COLOR_BLACK);
@@ -308,6 +329,15 @@ void drawNight(){
     BSP_LCD_DrawCircle(390+28+15, 46+28, 28);
     BSP_LCD_SetTextColor(LCD_COLOR_DARKBLUE);
     BSP_LCD_FillRect (390+28+8, 46, 50, 66);
+
+}
+
+void drawNight(){
+    //Draw night background
+    BSP_LCD_Clear(LCD_COLOR_DARKBLUE);
+
+    //Draw moon
+    drawMoon();
 
     //Draw night grass bottom
     BSP_LCD_SetTextColor(LCD_COLOR_DARKGREEN);
@@ -363,7 +393,23 @@ void drawCloud(){
     BSP_LCD_SetTextColor(LCD_COLOR_LIGHTGRAY);
     BSP_LCD_FillEllipse (397, 46+35+7, 40, 13);
     BSP_LCD_FillCircle(397, 46+35, 14);
+
+    cloudDrawn = true;
     
+}
+
+void removeCloud(){
+    if(currentDrawnDayNight == NIGHT){
+        BSP_LCD_SetTextColor(LCD_COLOR_DARKBLUE);
+        BSP_LCD_FillRect(340, 46, 110, 70);
+        drawMoon();
+    } else {
+        BSP_LCD_SetTextColor(LCD_COLOR_SKY_DAY);
+        BSP_LCD_FillRect(340, 46, 110, 70);
+        drawSun();
+    }
+
+    cloudDrawn = false;
 }
 
 

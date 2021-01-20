@@ -4,14 +4,15 @@
 #include "data.h"
 #include "lcd.h"
 #include "sensors.h"
+#include "touch.h"
 
 
 enum State {STARTUP, IDLE, SAMPLE_SENSOR, READ_SENSOR, UPDATE_SCREEN, INTERUPT};
 
 enum StartupInput {NOTHING,NAME,NUMBER};
 
-//int currentState = STARTUP;
-int currentState = IDLE;
+int currentState = STARTUP;
+//int currentState = IDLE;
 int currentStartupInput = NOTHING;
 
 int mainScreenDrawn = 0;
@@ -45,6 +46,12 @@ void runStates(){
                 
             }
 
+            // Check for touch to skip to IDLE state
+            if(newTouch){
+                currentState=IDLE;
+                newTouch = false;
+            }
+
             // Sample some data while in startup to make the display show proper values from the get go.
             if (sensorSampleTimer()) {
                 sensorSampling();
@@ -60,6 +67,9 @@ void runStates(){
             if(mainScreenDrawn == 0){       //Check that first time IDLE mainscreen is drawn
                 drawMainScreen();
                 mainScreenDrawn = 1;
+            }
+            if(newTouch){
+                currentState = INTERUPT;
             }
 
             if (sensorReadTimer()){
@@ -89,7 +99,10 @@ void runStates(){
             currentState = IDLE;
             break;
         case INTERUPT:
-
+            if(newTouch){
+                newTouch = false;
+            }
+            currentState = IDLE;
             break;
     }
 
